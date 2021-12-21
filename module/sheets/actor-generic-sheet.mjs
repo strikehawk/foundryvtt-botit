@@ -1,8 +1,4 @@
 import { BOTIT } from "../helpers/config.mjs";
-import { BotitSettings } from "../helpers/botit-settings.mjs";
-
-/** @type {BotitSettings} */
-const botitGlobal = BOTIT;
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
@@ -14,7 +10,7 @@ export class BotitGenericActorSheet extends ActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ["botit", "sheet", "actor"],
-      template: `systems/${botitGlobal.systemFolder}/templates/actor/actor-generic-sheet.html`,
+      template: `systems/${BOTIT.systemFolder}/templates/actor/actor-generic-sheet.html`,
       width: 800,
       height: 650,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "features" }]
@@ -23,6 +19,6 @@ export class BotitGenericActorSheet extends ActorSheet {
 
   /** @override */
   get template() {
-    return `systems/${botitGlobal.systemFolder}/templates/actor/actor-generic-sheet.html`;
+    return `systems/${BOTIT.systemFolder}/templates/actor/actor-generic-sheet.html`;
   }
 }

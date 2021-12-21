@@ -1,5 +1,5 @@
 {
-    "name": "botit",
+    "name": "blade-iron-throne",
     "title": "Blade of the Iron Throne",
     "description": "Blade of the Iron Throne game system for Foundry VTT",
     "version": "1.0.0",
@@ -26,7 +26,7 @@
     "gridUnits": "ft",
     "primaryTokenAttribute": "resources.hp",
     "secondaryTokenAttribute": "resources.wounds",
-    "url": "https://your/hosted/system/repo/",
-    "manifest": "https://your/hosted/system/repo/system.json",
-    "download": "https://your/packaged/download/archive.zip"
+    "url": "https://github.com/strikehawk/foundryvtt-botit",
+    "manifest": "https://raw.githubusercontent.com/strikehawk/foundryvtt-botit/develop/system.json",
+    "download": "https://your/packaged/download/blade-iron-throne.zip"
   }

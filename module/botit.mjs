@@ -12,10 +12,6 @@ import { HandlebarsHelpers } from "./helpers/handlebars-helpers.mjs";
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
 
 import { BOTIT } from "./helpers/config.mjs";
-import { BotitSettings } from "./helpers/botit-settings.mjs";
-
-/** @type {BotitSettings} */
-const botitGlobal = BOTIT;
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -31,7 +27,7 @@ Hooks.once('init', async function() {
 
   // Add custom constants for configuration.
   /** @type {BotitSettings} */
-  CONFIG.BOTIT = botitGlobal;
+  CONFIG.BOTIT = BOTIT;
 
   /**
    * Set an initiative formula for the system

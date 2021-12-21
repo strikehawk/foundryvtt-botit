@@ -1,9 +1,4 @@
 import { BOTIT } from "../helpers/config.mjs";
-import { BotitSettings } from "../helpers/botit-settings.mjs";
-
-import { setupActorSkillFormListeners } from "./actor-skill-form.mjs";
-import { getSkillIdentifier } from "../helpers/templates.mjs";
-import { ItemSheetProfileBehavior } from "./item-sheet-profile.behavior.mjs";
 
 /** @type {BotitSettings} */
 const botitGlobal = BOTIT;
@@ -18,7 +13,7 @@ export class BotitActorSheet extends ActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ["botit", "sheet", "actor"],
-      template: `systems/${botitGlobal.systemFolder}/templates/actor/actor-hero-sheet.html`,
+      template: `systems/${BOTIT.systemFolder}/templates/actor/actor-hero-sheet.html`,
       width: 800,
       height: 650,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "skills" }]
@@ -27,7 +22,7 @@ export class BotitActorSheet extends ActorSheet {
 
   /** @override */
   get template() {
-    return `systems/${botitGlobal.systemFolder}/templates/actor/actor-${this.actor.data.type}-sheet.html`;
+    return `systems/${BOTIT.systemFolder}/templates/actor/actor-${this.actor.data.type}-sheet.html`;
   }
 
   /* -------------------------------------------- */

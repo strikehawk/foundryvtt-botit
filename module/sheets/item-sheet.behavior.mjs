@@ -1,9 +1,5 @@
 import { BOTIT } from "../helpers/config.mjs";
 import { BotitItem } from "../documents/item.mjs";
-import { BotitSettings } from "../helpers/botit-settings.mjs";
-
-/** @type {BotitSettings} */
-const botitGlobal = BOTIT;
 
 export class ItemSheetBehaviorBase {
     
@@ -41,7 +37,7 @@ export class ItemSheetBehaviorBase {
      * @memberof ItemSheetBehaviorBase
      */
     get template() {
-        const path = `systems/${botitGlobal.systemFolder}/templates/item`;
+        const path = `systems/${BOTIT.systemFolder}/templates/item`;
         // Return a single sheet for all item types.
         // return `${path}/item-sheet.html`;
 

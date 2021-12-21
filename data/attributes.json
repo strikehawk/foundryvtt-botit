@@ -1,0 +1,38 @@
+[
+    {
+        "key": "brawn",
+        "label": "Brawn",
+        "abbreviation": "bn",
+        "description": "Brawn is a measure of your muscle, your vitality, or your frame. It indicates how much damage you do unaided, and how easily you resist punishment, disease, and poison."
+    },
+    {
+        "key": "daring",
+        "label": "Daring",
+        "abbreviation": "dg",
+        "description": "Daring is a measure of your courage and ability to take decisive action. It affects how well you can strike and parry, as well as how skilled you are with actions like climbing, acrobatics and all kinds of athletics."
+    },
+    {
+        "key": "tenacity",
+        "label": "Tenacity",
+        "abbreviation": "ty",
+        "description": "Tenacity is a measure of your ability to focus on a task or goal, a measure of the strength of your persona. It affects how easily influenced you are, your inner discipline, and your sanity."
+    },
+    {
+        "key": "heart",
+        "label": "Heart",
+        "abbreviation": "ht",
+        "description": "Heart is a measure of your social aptitude. It affects both how charismatic you appear to others (people and animals) and how easily you can get them to do your bidding. It governs your ability for empathy, and the understanding of human and animal nature."
+    },
+    {
+        "key": "sagacity",
+        "label": "Sagacity",
+        "abbreviation": "sy",
+        "description": "Sagacity is a measure of your mental agility. It indicates how logical, intuitive, and smart you are. It affects situations that require reasoning, sharpness of the senses, as well as any judgment relating to them."
+    },
+    {
+        "key": "cunning",
+        "label": "Cunning",
+        "abbreviation": "cg",
+        "description": "Cunning is a measure of your raw instincts, agility, reaction time and balance. It affects how skilled you are with actions like lock picking, pick pocketing, hiding, and sneaking."
+    }
+]

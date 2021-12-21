@@ -1,8 +1,4 @@
 import { BOTIT } from "../helpers/config.mjs";
-import { BotitSettings } from "../helpers/botit-settings.mjs";
-
-/** @type {BotitSettings} */
-const botitGlobal = BOTIT;
 
 /**
  * Extend the basic Item with some very simple modifications.
@@ -83,7 +79,7 @@ function getDefaultItemImagePath(itemData) {
 
   switch (itemData.type) {
     case "talent":
-      url = `systems/${botitGlobal.systemFolder}/assets/svg/talent.svg`;
+      url = `systems/${BOTIT.systemFolder}/assets/svg/talent.svg`;
       break;
     default:
       url = "icons/svg/item-bag.svg";
