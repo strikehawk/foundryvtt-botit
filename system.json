@@ -1,0 +1,32 @@
+{
+    "name": "botit",
+    "title": "Blade of the Iron Throne",
+    "description": "Blade of the Iron Throne game system for Foundry VTT",
+    "version": "1.0.0",
+    "templateVersion": 2,
+    "author": "Strikehawk",
+    "minimumCoreVersion": "0.8.3",
+    "esmodules": [
+      "module/botit.mjs"
+    ],
+    "styles": [
+      "css/botit.css"
+    ],
+    "packs": [],
+    "languages": [
+      {
+        "lang": "en",
+        "name": "English",
+        "path": "lang/en.json"
+      }
+    ],
+    "socket": false,
+    "initiative": "1d20",
+    "gridDistance": 10,
+    "gridUnits": "ft",
+    "primaryTokenAttribute": "resources.hp",
+    "secondaryTokenAttribute": "resources.wounds",
+    "url": "https://your/hosted/system/repo/",
+    "manifest": "https://your/hosted/system/repo/system.json",
+    "download": "https://your/packaged/download/archive.zip"
+  }
