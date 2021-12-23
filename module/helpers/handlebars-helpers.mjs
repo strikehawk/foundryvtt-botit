@@ -3,7 +3,7 @@ export class HandlebarsHelpers {
      * Construct an editor element for rich text editing with TinyMCE
      * @param {object} options              Helper options
      * @param {boolean} [options.owner]     Is the current user an owner of the data?
-     * @param {boolean} [options.entities=true] Replace dynamic entity links?
+     * @param {boolean} [options.documents=true] Replace dynamic entity links?
      * @param {Object|Function} [options.rollData] The data object providing context for inline rolls
      * @param {string} [options.content=""]  The original HTML content as a string
      * @return {Handlebars.SafeString}
@@ -11,9 +11,9 @@ export class HandlebarsHelpers {
     static readonlyEditor(options) {
         // Enrich the content
         const owner = Boolean(options.hash['owner']);
-        const entities = options.hash['entities'] !== false;
+        const documents = options.hash['documents'] !== false;
         const rollData = options.hash["rollData"];
-        const content = TextEditor.enrichHTML(options.hash['content'] || "", { secrets: owner, entities, rollData });
+        const content = TextEditor.enrichHTML(options.hash['content'] || "", { secrets: owner, documents, rollData });
 
         // Construct the HTML
         let editor = $(`<div>${content}</div>`);

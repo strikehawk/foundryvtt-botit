@@ -45,8 +45,13 @@
   text-align: center;
 }
 
-.fxLayoutColumn {
+.fxLayoutColumn,
+.fxLayoutRow {
   display: flex;
+}
+
+.fxLayoutColumn {
+
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
@@ -83,7 +88,6 @@
 }
 
 .fxLayoutRow {
-  display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;

@@ -1,0 +1,32 @@
+[
+    {
+        "key": "assets-a",
+        "label": "Assets A",
+        "description": "Character has 6 Good Assets."
+    },
+    {
+        "key": "assets-b",
+        "label": "Assets B",
+        "description": "Character has 3 Good Assets."
+    },
+    {
+        "key": "assets-c",
+        "label": "Assets C",
+        "description": "Character has 1 Good Asset."
+    },
+    {
+        "key": "assets-d",
+        "label": "Assets D",
+        "description": "Character has no Assets."
+    },
+    {
+        "key": "assets-e",
+        "label": "Assets E",
+        "description": "Character has 1 Poor Asset."
+    },
+    {
+        "key": "assets-f",
+        "label": "Assets F",
+        "description": "Character has 3 Poor Assets."
+    }
+]

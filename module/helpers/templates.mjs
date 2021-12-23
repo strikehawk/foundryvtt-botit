@@ -8,11 +8,12 @@ import { BOTIT } from "./config.mjs";
 export const preloadHandlebarsTemplates = async function () {
   return loadTemplates([
 
-    // // Actor partials.
-    // `systems/${BOTIT.systemFolder}/templates/actor/parts/actor-combat.html`,
+    // Actor partials.
+    `systems/${BOTIT.systemFolder}/templates/actor/parts/actor-attributes.html`,
+    `systems/${BOTIT.systemFolder}/templates/actor/parts/actor-skills.html`,
+    `systems/${BOTIT.systemFolder}/templates/actor/parts/actor-blank.html`,
     // `systems/${BOTIT.systemFolder}/templates/actor/parts/actor-talents.html`,
     // `systems/${BOTIT.systemFolder}/templates/actor/parts/actor-profile.html`,
-    // `systems/${BOTIT.systemFolder}/templates/actor/parts/actor-skills.html`,
     // `systems/${BOTIT.systemFolder}/templates/actor/parts/actor-skill-form.html`,
     // `systems/${BOTIT.systemFolder}/templates/actor/parts/actor-hero-sheet-full.html`,
 

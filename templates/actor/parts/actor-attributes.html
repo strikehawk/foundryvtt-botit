@@ -1,0 +1,82 @@
+<div class="attributes-block fxLayoutColumn fxLayoutGap-8">
+    <!-- Main attributes block -->
+    <div>
+        <div class="fxLayoutRow fxLayoutGap-8">
+            <img class="readonly" src="systems/blade-iron-throne/assets/img/attribute-1.png" title="Brawn">
+            <span class="attribute-name fxFlex">Brawn (BN)</span>
+            <input name="data.attributes.brawn" type="text" class="numerical-value" data-dtype="Number"
+                value="{{numberFormat data.attributes.brawn decimals=0}}" />
+        </div>
+        <div class="fxLayoutRow fxLayoutGap-8">
+            <img class="readonly" src="systems/blade-iron-throne/assets/img/attribute-2.png" title="Daring">
+            <span class="attribute-name fxFlex">Daring (DG)</span>
+            <input name="data.attributes.daring" type="text" class="numerical-value" data-dtype="Number"
+                value="{{numberFormat data.attributes.daring decimals=0}}" />
+        </div>
+        <div class="fxLayoutRow fxLayoutGap-8">
+            <img class="readonly" src="systems/blade-iron-throne/assets/img/attribute-3.png" title="Tenacity">
+            <span class="attribute-name fxFlex">Tenacity (TY)</span>
+            <input name="data.attributes.tenacity" type="text" class="numerical-value" data-dtype="Number"
+                value="{{numberFormat data.attributes.tenacity decimals=0}}" />
+        </div>
+        <div class="fxLayoutRow fxLayoutGap-8">
+            <img class="readonly" src="systems/blade-iron-throne/assets/img/attribute-4.png" title="Heart">
+            <span class="attribute-name fxFlex">Heart (HT)</span>
+            <input name="data.attributes.heart" type="text" class="numerical-value" data-dtype="Number"
+                value="{{numberFormat data.attributes.heart decimals=0}}" />
+        </div>
+        <div class="fxLayoutRow fxLayoutGap-8">
+            <img class="readonly" src="systems/blade-iron-throne/assets/img/attribute-5.png" title="Sagacity">
+            <span class="attribute-name fxFlex">Sagacity (SY)</span>
+            <input name="data.attributes.sagacity" type="text" class="numerical-value" data-dtype="Number"
+                value="{{numberFormat data.attributes.sagacity decimals=0}}" />
+        </div>
+        <div class="fxLayoutRow fxLayoutGap-8">
+            <img class="readonly" src="systems/blade-iron-throne/assets/img/attribute-6.png" title="Cunning">
+            <span class="attribute-name fxFlex">Cunning (CG)</span>
+            <input name="data.attributes.cunning" type="text" class="numerical-value" data-dtype="Number"
+                value="{{numberFormat data.attributes.cunning decimals=0}}" />
+        </div>
+    </div>
+
+    <!-- Derived attributes block -->
+    <div class="fxLayoutRow fxLayoutGap-4">
+        <div class="derived-attribute fxFlex" title="Reflex">
+            <span class="derived-attribute-name">Rflx</span>
+            <span>{{numberFormat data.derivedAttributes.reflex decimals=0}}</span>
+        </div>
+        
+        <div class="derived-attribute fxFlex" title="Aim">
+            <span class="derived-attribute-name">Aim</span>
+            <span>{{numberFormat data.derivedAttributes.aim decimals=0}}</span>
+        </div>
+
+        <div class="derived-attribute fxFlex" title="Knockdown">
+            <span class="derived-attribute-name">KDwn</span>
+            <span>{{numberFormat data.derivedAttributes.knockdown decimals=0}}</span>
+        </div>
+
+        <div class="derived-attribute fxFlex" title="Knockout">
+            <span class="derived-attribute-name">KOut</span>
+            <span>{{numberFormat data.derivedAttributes.knockout decimals=0}}</span>
+        </div>
+
+        <div class="derived-attribute fxFlex" title="Move">
+            <span class="derived-attribute-name">Move</span>
+            <span>{{numberFormat data.derivedAttributes.move decimals=0}}</span>
+        </div>
+
+        <div class="derived-attribute fxFlex" title="Power">
+            <span class="derived-attribute-name">Pow</span>
+            <span>{{numberFormat data.derivedAttributes.power decimals=0}}</span>
+        </div>
+
+    </div>
+
+    <div class="fxLayoutRow align-items-baseline fxLayoutGap-8">
+        <span class="derived-attribute-name">Karma</span>
+        <span class="dotted-line fxFlex"></span>
+        <input name="data.karma" type="text" class="numerical-value" data-dtype="Number"
+            value="{{numberFormat data.karma decimals=0}}" />
+    </div>
+</div>

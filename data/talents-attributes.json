@@ -1,0 +1,32 @@
+[
+    {
+        "key": "attributes-a",
+        "label": "Attributes A",
+        "description": "Character gains 34 Attribute Points."
+    },
+    {
+        "key": "attributes-b",
+        "label": "Attributes B",
+        "description": "Character gains 29 Attribute Points."
+    },
+    {
+        "key": "attributes-c",
+        "label": "Attributes C",
+        "description": "Character gains 26 Attribute Points."
+    },
+    {
+        "key": "attributes-d",
+        "label": "Attributes D",
+        "description": "Character gains 24 Attribute Points."
+    },
+    {
+        "key": "attributes-e",
+        "label": "Attributes E",
+        "description": "Character gains 22 Attribute Points."
+    },
+    {
+        "key": "attributes-f",
+        "label": "Attributes F",
+        "description": "Character gains 18 Attribute Points."
+    }
+]

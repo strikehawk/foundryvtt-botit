@@ -1,0 +1,32 @@
+[
+    {
+        "key": "proficiencies-a",
+        "label": "Proficiencies A",
+        "description": "Character gains 16 Proficiency Points."
+    },
+    {
+        "key": "proficiencies-b",
+        "label": "Proficiencies B",
+        "description": "Character gains 11 Proficiency Points."
+    },
+    {
+        "key": "proficiencies-c",
+        "label": "Proficiencies C",
+        "description": "Character gains 8 Proficiency Points."
+    },
+    {
+        "key": "proficiencies-d",
+        "label": "Proficiencies D",
+        "description": "Character gains 6 Proficiency Points."
+    },
+    {
+        "key": "proficiencies-e",
+        "label": "Proficiencies E",
+        "description": "Character gains 4 Proficiency Points."
+    },
+    {
+        "key": "proficiencies-f",
+        "label": "Proficiencies F",
+        "description": "Character gains 0 Proficiency Points."
+    }
+]

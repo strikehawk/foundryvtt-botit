@@ -34,5 +34,47 @@
         "label": "Cunning",
         "abbreviation": "cg",
         "description": "Cunning is a measure of your raw instincts, agility, reaction time and balance. It affects how skilled you are with actions like lock picking, pick pocketing, hiding, and sneaking."
+    },
+    {
+        "key": "reflex",
+        "label": "Reflex",
+        "abbreviation": "",
+        "combined": true,
+        "description": "Reflex is the combination of Daring and Cunning, which determines how quickly a character may physically react to external stimulus."
+    },
+    {
+        "key": "aim",
+        "label": "Aim",
+        "abbreviation": "",
+        "combined": true,
+        "description": "Aim, extracted from Sagacity and Cunning, quantifies one’s natural ability to hit a target over distances."
+    },
+    {
+        "key": "knockdown",
+        "label": "Knockdown",
+        "abbreviation": "",
+        "combined": true,
+        "description": "Knockdown, derived from Brawn and Daring, is a measure of how solid and balanced one remains after taking a blow."
+    },
+    {
+        "key": "knockout",
+        "label": "Knockout",
+        "abbreviation": "",
+        "combined": true,
+        "description": "Knockout is a measure of how hard it is to knock a character unconscious, based on Brawn and Tenacity."
+    },
+    {
+        "key": "move",
+        "label": "Move",
+        "abbreviation": "",
+        "combined": true,
+        "description": "Move, derived from Brawn, Cunning, and Daring, is a measure of how much distance one can cover on foot in a hurry."
+    },
+    {
+        "key": "power",
+        "label": "Power",
+        "abbreviation": "",
+        "combined": true,
+        "description": "Sorcerous characters have a sixth Combined Attribute governing the use of sorcery, Power."
     }
 ]

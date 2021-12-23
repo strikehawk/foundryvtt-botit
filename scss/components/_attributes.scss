@@ -1,0 +1,27 @@
+.attributes-block {
+    img {
+        height: 30px;
+    }
+}
+
+.attribute-name {
+    font-family: "Aniron Bold";
+    font-size: 16px;
+}
+
+.derived-attribute {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    > * {
+        display: block;
+    }
+}
+
+.derived-attribute-name {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+}

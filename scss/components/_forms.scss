@@ -1,5 +1,20 @@
-.item-form {
-  font-family: $font-primary;
+.profile-img {
+  flex: 0 0 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+
+img {
+  &.readonly {
+    border: none;
+  }
+}
+
+.profile-img-small {
+  @extend .profile-img;
+
+  flex: 0 0 60px;
+  height: 60px;
 }
 
 .sheet-header {
@@ -66,7 +81,7 @@ a:hover {
   overflow: auto;
   padding-right: 8px;
 
-  > * {
+  >* {
     max-height: 0;
   }
 }

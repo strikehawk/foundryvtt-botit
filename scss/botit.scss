@@ -14,24 +14,33 @@
 @import 'global/fonts';
 
 /* Styles limited to boilerplate sheets */
-.wwk {
+.botit {
   @import 'components/forms';
+  @import 'components/attributes';
 }
 
 .title-1 {
-  font-family: "El Tercer Hombre";
-  font-size: 46px;
+  font-family: "Crom";
+  font-size: 42px;
   text-transform: uppercase;
 }
 
 .title-1-alt {
-  font-family: "Black Folder";
+  font-family: "Barbarian";
   font-size: 40px;
-  text-transform: uppercase;
+  text-transform: lowercase;
+  
+  &::before {
+    content: "["
+  }
+
+  &::after {
+    content: "]"
+  }
 }
 
 .title-2 {
-  font-family: "Saint Tropez";
+  font-family: "Breathe Fire";
   font-size: 16px;
   font-weight: bold;
   text-transform: uppercase;
@@ -43,17 +52,16 @@
 }
 
 .field-label {
-  font-family: "Saint Tropez";
+  font-family: "Breathe Fire";
   font-weight: bold;
-  text-transform: uppercase;
-  transform: translateY(4px);
 }
 
 .font-weight-normal {
   font-weight: normal;
 }
 
-.action-icon, .action-icon-large {
+.action-icon,
+.action-icon-large {
   font-size: 12px;
   text-align: center;
   flex-grow: 0;

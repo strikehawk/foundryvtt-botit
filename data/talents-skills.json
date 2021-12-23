@@ -1,0 +1,32 @@
+[
+    {
+        "key": "skills-a",
+        "label": "Skills A",
+        "description": "Character gains 48 Skill Points."
+    },
+    {
+        "key": "skills-b",
+        "label": "Skills B",
+        "description": "Character gains 33 Skill Points."
+    },
+    {
+        "key": "skills-c",
+        "label": "Skills C",
+        "description": "Character gains 24 Skill Points."
+    },
+    {
+        "key": "skills-d",
+        "label": "Skills D",
+        "description": "Character gains 18 Skill Points."
+    },
+    {
+        "key": "skills-e",
+        "label": "Skills E",
+        "description": "Character gains 12 Skill Points."
+    },
+    {
+        "key": "skills-f",
+        "label": "Skills F",
+        "description": "Character gains 0 Skill Points."
+    }
+]

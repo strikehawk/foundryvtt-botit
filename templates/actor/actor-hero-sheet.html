@@ -1,0 +1,122 @@
+<form class="{{cssClass}} {{actor.type}} flexcol" autocomplete="off">
+  <div class="fxLayoutColumn fxLayoutGap-16 fxFlex">
+    <div class="sheet-header fxLayoutRow align-items-start fxLayoutGap-16">
+
+      <div class="fxLayoutColumn fxLayoutGap-16 fxFlex">
+        <!-- Character header -->
+        <div class="fxLayoutRow fxLayoutGap-8 fxFlex">
+          <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100"
+            width="100" />
+          <div class="fxLayoutColumn align-items-stretch fxLayoutGap-4 fxFlex">
+            <div class="fxLayoutRow fxLayoutGap-8">
+              {{#unless inEdition}}
+              <div class="title-1">{{actor.name}}</div>
+              {{/unless}}
+              {{#if inEdition}}
+              <input class="fxFlex" name="name" type="text" value="{{actor.name}}" placeholder="Nom" />
+              {{/if}}
+            </div>
+
+            <div class="title-2">
+              <span>{{data.bio.culture}}</span>&nbsp;<span>{{data.bio.gender}}</span>,&nbsp;<span>{{data.bio.height}}m</span>,&nbsp;<span>{{data.bio.weight}}kg</span>
+            </div>
+
+            <div class="fxLayoutRow align-items-baseline fxLayoutGap-8">
+              <span class="title-3">Loot Level</span>
+              <span class="dotted-line fxFlex"></span>
+              <input name="data.lootLevel" type="text" class="numerical-value" data-dtype="Number"
+                value="{{numberFormat data.lootLevel decimals=0}}" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Passions -->
+        <div class="fxLayoutColumn align-items-stretch fxLayoutGap-4">
+
+          <div class="fxLayoutRow align-items-baseline fxLayoutGap-8">
+            <input name="data.passions.1.label" type="text" class="fxFlex" data-dtype="String"
+              value="{{data.passions.1.label}}" />
+            <input name="data.passions.1.value" type="text" class="numerical-value" data-dtype="Number"
+              value="{{numberFormat data.passions.1.value decimals=0}}" />
+          </div>
+
+          <div class="fxLayoutRow align-items-baseline fxLayoutGap-8">
+            <input name="data.passions.2.label" type="text" class="fxFlex" data-dtype="String"
+              value="{{data.passions.2.label}}" />
+            <input name="data.passions.2.value" type="text" class="numerical-value" data-dtype="Number"
+              value="{{numberFormat data.passions.2.value decimals=0}}" />
+          </div>
+
+          <div class="fxLayoutRow align-items-baseline fxLayoutGap-8">
+            <input name="data.passions.3.label" type="text" class="fxFlex" data-dtype="String"
+              value="{{data.passions.3.label}}" />
+            <input name="data.passions.3.value" type="text" class="numerical-value" data-dtype="Number"
+              value="{{numberFormat data.passions.3.value decimals=0}}" />
+          </div>
+
+          <div class="fxLayoutRow align-items-baseline fxLayoutGap-8">
+            <input name="data.passions.4.label" type="text" class="fxFlex" data-dtype="String"
+              value="{{data.passions.4.label}}" />
+            <input name="data.passions.4.value" type="text" class="numerical-value" data-dtype="Number"
+              value="{{numberFormat data.passions.4.value decimals=0}}" />
+          </div>
+
+          <div class="fxLayoutRow align-items-baseline fxLayoutGap-8">
+            <span class="derived-attribute-name">Drama</span>
+            <span class="dotted-line fxFlex"></span>
+            <input name="data.passions.drama" type="text" class="numerical-value" data-dtype="Number"
+              value="{{numberFormat data.passions.drama decimals=0}}" />
+          </div>
+
+        </div>
+      </div>
+
+      <div>
+        {{> "systems/blade-iron-throne/templates/actor/parts/actor-attributes.html"}}
+      </div>
+    </div>
+
+
+    {{!-- Sheet Tab Navigation --}}
+    <nav class="sheet-tabs tabs title-2" data-group="primary">
+      {{!-- Default tab is specified in actor-sheet.mjs --}}
+      <a class="item" data-tab="skills">Skills</a>
+      <a class="item" data-tab="assets">Assets</a>
+      <a class="item" data-tab="sorcery">Sorcery</a>
+      <a class="item" data-tab="priorities">Priorities</a>
+    </nav>
+
+    {{!-- Sheet Body --}}
+    <section class="sheet-body fxFlex">
+
+      {{!-- Skills Tab --}}
+      <div class="tab skills" data-group="primary" data-tab="skills">
+        <div class="tab-container fxFlex">
+          {{> "systems/blade-iron-throne/templates/actor/parts/actor-skills.html"}}
+        </div>
+      </div>
+
+      {{!-- Assets Tab --}}
+      <div class="tab assets" data-group="primary" data-tab="assets">
+        <div class="tab-container fxFlex">
+          {{> "systems/blade-iron-throne/templates/actor/parts/actor-blank.html"}}
+        </div>
+      </div>
+
+      {{!-- Sorcery Tab --}}
+      <div class="tab sorcery" data-group="primary" data-tab="sorcery">
+        <div class="tab-container fxLayoutColumn fxFlex">
+          {{> "systems/blade-iron-throne/templates/actor/parts/actor-blank.html"}}
+        </div>
+      </div>
+
+      {{!-- Priorities Tab --}}
+      <div class="tab priorities" data-group="primary" data-tab="priorities">
+        <div class="tab-container fxLayoutColumn fxFlex">
+          {{> "systems/blade-iron-throne/templates/actor/parts/actor-blank.html"}}
+        </div>
+      </div>
+
+    </section>
+  </div>
+</form>

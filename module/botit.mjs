@@ -17,7 +17,7 @@ import { BOTIT } from "./helpers/config.mjs";
 /*  Init Hook                                   */
 /* -------------------------------------------- */
 
-Hooks.once('init', async function() {
+Hooks.once('init', async function () {
   // Add utility classes to the global game object so that they're more easily
   // accessible in global contexts.
   game.botit = {
@@ -55,3 +55,36 @@ Hooks.once('init', async function() {
   // Preload Handlebars templates.
   return preloadHandlebarsTemplates();
 });
+
+Hooks.once('ready', async function () {
+  // _createSkills();
+});
+
+async function _createSkills() {
+  let folder = game.folders.find(f => f.type === "Item" && f.name === "Skills");
+  if (!folder) {
+    folder = await Folder.create({ name: "Skills", type: "Item" });
+  }
+
+  for (const i of game.items) {
+    if (i.type !== "skill") {
+      continue;
+    }
+
+    i.delete();
+  }
+
+  let item;
+  let data;
+  for (const skill of Object.values(BOTIT.skills)) {
+    data = { 
+      name: skill.label, 
+      type: "skill", 
+      img: "icons/svg/d20.svg",
+      folder: folder.id, 
+      data: foundry.utils.deepClone(skill) 
+    };
+  
+    item = await Item.create(data);
+  }
+}

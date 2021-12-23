@@ -1,4 +1,5 @@
 import { ItemSheetBehaviorBase } from "./item-sheet.behavior.mjs";
+import { ItemSheetSkillBehavior } from "./item-sheet-skill.behavior.mjs";
 
 /**
  * Extend the basic ItemSheet with some very simple modifications
@@ -30,6 +31,8 @@ export class BotitItemSheet extends ItemSheet {
     }
 
     switch (item.type) {
+      case "skill":
+        return ItemSheetSkillBehavior;
       default:
         return ItemSheetBehaviorBase;
     }

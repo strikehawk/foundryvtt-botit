@@ -1,0 +1,15 @@
+<div class="fxLayoutColumn fxLayoutGap-8">
+    {{#each skills as |skill id|}}
+    <div class="skill fxLayoutRow align-items-baseline fxLayoutGap-8" data-item-id="{{skill._id}}">
+        <div class="skill-name fxLayoutRow">
+            <div class="field-label">{{skill.data.label}}</div>
+        </div>
+        <div class="dotted-line fxFlex"></div>
+        <div class="fxLayoutRow fxLayoutGap-4">
+            <input name="data.skills.{{skill.data.key}}" type="text" class="numerical-value" data-dtype="Number"
+                value="{{numberFormat skill.value decimals=0}}" />
+            <a class="action-icon item-delete" title="Remove Skill" data-item-id="{{skill._id}}"><i class="fas fa-minus"></i></a>
+        </div>
+    </div>
+    {{/each}}
+</div>

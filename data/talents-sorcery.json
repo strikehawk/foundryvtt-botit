@@ -1,0 +1,32 @@
+[
+    {
+        "key": "sorcery-a",
+        "label": "Mysteriarch",
+        "description": "<div>A <strong>Mysteriarch </strong>is one of the greatest masters of the arcane alive. He can know all Mysteries, both Lesser and Greater, and he starts out the game with knowledge of a single Arcane Secret. He receives one free point in the Occultism Skill and one free Proficiency point to spend on Mysteries, but may not put more Proficiency points into Greater than into Lesser Mysteries.</div>"
+    },
+    {
+        "key": "sorcery-b",
+        "label": "Sorcerer",
+        "description": "<div><strong>Sorcerer </strong>denotes somebody deeply steeped and well versed in arcane knowledge. He can know either all six Lesser Mysteries, or three Lesser and one Greater Mystery. He receives one free point in the Occultism Skill. Should he opt for a Greater Mystery, it may be of no greater value than his highest Lesser Mystery.</div>"
+    },
+    {
+        "key": "sorcery-c",
+        "label": "Dabbler",
+        "description": "<div><strong>Dabbler</strong> encompasses hedge wizards, witch doctors, sages of secret lore, some of the more devoted cultists of unwholesome deities and other serious meddlers in the occult. Such characters may know up to two Lesser Mysteries and may also have the Occultism Skill. Enslavement and Witchfire may not both be chosen.</div>"
+    },
+    {
+        "key": "sorcery-d",
+        "label": "Mundane",
+        "description": "<div><strong>Mundane </strong>denotes the common man. He has heard whispers of sorcery but has most likely never encountered it, has no affinity for it, and most certainly doesn&rsquo;t know any.</div>"
+    },
+    {
+        "key": "sorcery-e",
+        "label": "Cursed",
+        "description": "<div><strong>Cursed </strong>denotes a person not only unskilled in the arcane, but also somehow particularly vulnerable to harmful sorcery. When he checks to resist sorcerous harm or influence, he does so at a +2 TN penalty.</div>"
+    },
+    {
+        "key": "sorcery-f",
+        "label": "Doomed",
+        "description": "<div><strong>Doomed </strong>is a person not only devastatingly open to harmful sorcery, but actually victimized by it. He resists sorcery as per the E Pick, Cursed, and on top of this has already contracted some kind of terrible supernatural doom or weird. This doom hanging over him is geared toward a specific, utterly ruinous fate, expressing itself in mechanical terms as the equivalent of a Curse Rating 6 (See the Cursing Mystery), which can be lifted by neither faith or sorcery.</div><div>This doom need not be geared toward PC death, but if it isn&rsquo;t it needs to be geared to the utter destruction of all the PC holds dear and wants to achieve. Whatever the doom may be, it must run its course, undoing the PC in some nasty fashion. Alternatively, it might be remotely possible to lift by means of an impossible quest. Such a quest should take up more than five game sessions devoted solely to it, during which time the PC should face more than even odds of dying at least three times; in short, the referee should make sure that such a quest fails more often than it succeeds.</div><div>Please be advised that this Priority Pick should not be taken lightly, as the severity of the curse will more likely than not result in the destruction of the PC before the quest to lift it can be completed.</div>"
+    }
+]

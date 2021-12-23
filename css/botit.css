@@ -223,10 +223,14 @@
   text-align: center;
 }
 
-.fxLayoutColumn {
+.fxLayoutColumn,
+.fxLayoutRow {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.fxLayoutColumn {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
@@ -264,9 +268,6 @@
 }
 
 .fxLayoutRow {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
@@ -346,25 +347,50 @@
 }
 
 @font-face {
-  font-family: "El Tercer Hombre";
-  src: url("../assets/fonts/el-tercer-hombre.ttf");
+  font-family: "Aniron";
+  src: url("../assets/fonts/aniron.ttf");
 }
 @font-face {
-  font-family: "Black Folder";
-  src: url("../assets/fonts/black-folder.otf");
+  font-family: "Aniron Bold";
+  src: url("../assets/fonts/aniron-bold.ttf");
 }
 @font-face {
-  font-family: "Saint Tropez";
-  src: url("../assets/fonts/saint-tropez.otf");
+  font-family: "Breathe Fire";
+  src: url("../assets/fonts/breathe-fire.otf");
+}
+@font-face {
+  font-family: "Crom";
+  src: url("../assets/fonts/crom_v1.ttf");
+}
+@font-face {
+  font-family: "Scurlock";
+  src: url("../assets/fonts/scurlock.ttf");
+}
+@font-face {
+  font-family: "Stone Cross";
+  src: url("../assets/fonts/stonecross.ttf");
 }
 /* Styles limited to boilerplate sheets */
-.wwk {
+.botit {
   /* Text Input */
 }
-.wwk .item-form {
-  font-family: "Roboto", sans-serif;
+.botit .profile-img, .botit .profile-img-small {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 100px;
+  flex: 0 0 100px;
+  height: 100px;
+  margin-right: 10px;
 }
-.wwk .sheet-header {
+.botit img.readonly {
+  border: none;
+}
+.botit .profile-img-small {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 60px;
+  flex: 0 0 60px;
+  height: 60px;
+}
+.botit .sheet-header {
   -webkit-box-flex: 0;
   -ms-flex: 0 auto;
   flex: 0 auto;
@@ -383,70 +409,70 @@
   justify-content: flex-start;
   margin-bottom: 10px;
 }
-.wwk .sheet-header .profile-img {
+.botit .sheet-header .profile-img, .botit .sheet-header .profile-img-small {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 100px;
   flex: 0 0 100px;
   height: 100px;
   margin-right: 10px;
 }
-.wwk .sheet-header .header-fields {
+.botit .sheet-header .header-fields {
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
-.wwk .sheet-header h1.charname {
+.botit .sheet-header h1.charname {
   height: 30px;
   padding: 0px;
   margin: 5px 0;
   border-bottom: 0;
 }
-.wwk .sheet-header h1.charname input {
+.botit .sheet-header h1.charname input {
   width: 100%;
   height: 100%;
   margin: 0;
   font-size: 20px;
 }
-.wwk .sheet-tabs {
+.botit .sheet-tabs {
   -webkit-box-flex: 0;
   -ms-flex: 0;
   flex: 0;
   background-color: #c5c2b0;
 }
-.wwk .sheet-body .tab,
-.wwk .sheet-body .tab .editor {
+.botit .sheet-body .tab,
+.botit .sheet-body .tab .editor {
   height: 100%;
 }
-.wwk .sheet-body .tab > * {
+.botit .sheet-body .tab > * {
   height: 100%;
 }
-.wwk a:hover {
+.botit a:hover {
   text-shadow: 0 0 10px #121010;
 }
-.wwk .tabs .item.active {
+.botit .tabs .item.active {
   text-shadow: 0 0 10px #121010;
 }
-.wwk .tab-container {
+.botit .tab-container {
   overflow: auto;
   padding-right: 8px;
 }
-.wwk .tab-container > * {
+.botit .tab-container > * {
   max-height: 0;
 }
-.wwk .tox .tox-editor-container {
+.botit .tox .tox-editor-container {
   background: #fff;
 }
-.wwk .tox .tox-edit-area {
+.botit .tox .tox-edit-area {
   padding: 0 8px;
 }
-.wwk input[type=text],
-.wwk input[type=number],
-.wwk input[type=password],
-.wwk input[type=date],
-.wwk input[type=time] {
+.botit input[type=text],
+.botit input[type=number],
+.botit input[type=password],
+.botit input[type=date],
+.botit input[type=time] {
   width: 100%;
 }
-.wwk textarea {
+.botit textarea {
   background: rgba(0, 0, 0, 0.05);
   padding: 1px 3px;
   margin: 0;
@@ -463,60 +489,96 @@
   user-select: text;
   resize: none;
 }
-.wwk .remove-transform {
+.botit .remove-transform {
   -webkit-transform: none;
   -ms-transform: none;
   transform: none;
 }
-.wwk .dotted-line {
+.botit .dotted-line {
   border-bottom: 1px dashed #7a7971;
 }
-.wwk .drop-zone {
+.botit .drop-zone {
   border: 1px dashed #7a7971;
   border-radius: 4px;
 }
-.wwk div.numerical-value,
-.wwk span.numerical-value {
+.botit div.numerical-value,
+.botit span.numerical-value {
   width: 20px;
   text-align: center;
 }
-.wwk input[type=text].numerical-value,
-.wwk input[type=number].numerical-value {
+.botit input[type=text].numerical-value,
+.botit input[type=number].numerical-value {
   width: 30px;
   text-align: center;
 }
-.wwk .free-text {
+.botit .free-text {
   min-height: 60px;
 }
-.wwk .fieldset {
+.botit .fieldset {
   padding: 8px;
   border: 1px solid #7a7971;
   border-radius: 3px;
 }
-.wwk .overflow-auto {
+.botit .overflow-auto {
   overflow: auto;
 }
-.wwk .editor-small {
+.botit .editor-small {
   height: 160px;
 }
-.wwk .editor-small .editor {
+.botit .editor-small .editor {
   height: 100%;
+}
+.botit .attributes-block img {
+  height: 30px;
+}
+.botit .attribute-name {
+  font-family: "Aniron Bold";
+  font-size: 16px;
+}
+.botit .derived-attribute {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.botit .derived-attribute > * {
+  display: block;
+}
+.botit .derived-attribute-name {
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
 }
 
 .title-1 {
-  font-family: "El Tercer Hombre";
-  font-size: 46px;
+  font-family: "Crom";
+  font-size: 42px;
   text-transform: uppercase;
 }
 
 .title-1-alt {
-  font-family: "Black Folder";
+  font-family: "Barbarian";
   font-size: 40px;
-  text-transform: uppercase;
+  text-transform: lowercase;
+}
+.title-1-alt::before {
+  content: "[";
+}
+.title-1-alt::after {
+  content: "]";
 }
 
 .title-2 {
-  font-family: "Saint Tropez";
+  font-family: "Breathe Fire";
   font-size: 16px;
   font-weight: bold;
   text-transform: uppercase;
@@ -528,19 +590,16 @@
 }
 
 .field-label {
-  font-family: "Saint Tropez";
+  font-family: "Breathe Fire";
   font-weight: bold;
-  text-transform: uppercase;
-  -webkit-transform: translateY(4px);
-  -ms-transform: translateY(4px);
-  transform: translateY(4px);
 }
 
 .font-weight-normal {
   font-weight: normal;
 }
 
-.action-icon, .action-icon-large {
+.action-icon,
+.action-icon-large {
   font-size: 12px;
   text-align: center;
   -webkit-box-flex: 0;

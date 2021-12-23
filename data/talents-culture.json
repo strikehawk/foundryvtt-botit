@@ -1,0 +1,32 @@
+[
+    {
+        "key": "culture-a",
+        "label": "Enlightened",
+        "description": "<div>A few great civilizations rise above others and gain near mythical status. Learned beyond normal men, people of enlightened cultures are builders of cyclopean pyramids and towers that pierce the skies. Their magnificent buildings can last forever, and likewise monuments to an enlightened one&rsquo;s achievement can withstand the passage of time. Enlightened characters are especially long lived and begin play with these modifiers:</div> <ul> <li>+1 each to Tenacity, Sagacity and Heart; minimum 2, maximum 8/9</li> <li>One bonus supernatural or culture related Asset</li> <li>Occultism Skill always allowed</li> <li>14 bonus Skill points</li> <li>Extended life span &ndash; Enlightened Ones live half again to three times as long as mere mortals and need little to no sustenance or sleep.</li> </ul>"
+    },
+    {
+        "key": "culture-b",
+        "label": "Savage",
+        "description": "Savages include warriors from the frozen north and witch-doctors from the trackless wastes of the south. Savages tend to have a close connection with nature, but remain ignorant of many developmen<div>Savages include warriors from the frozen north and witch-doctors from the trackless wastes of the south. Savages tend to have a close connection with nature, but remain ignorant of many developments that more civilized people take for granted. Savage characters begin play with these modifiers:</div> <ul> <li>+1 each to Brawn, Daring and Tenacity; minimum 2, maximum 8/9</li> <li>7 bonus Skill points related to Survival, Climbing, Animal Ken, etc.</li> </ul>"
+    },
+    {
+        "key": "culture-c",
+        "label": "Hillman / Nomad",
+        "description": "<div>Hillmen live in broken mountainous regions that are hard to traverse. Their homeland lies either at the edge of civilized lands or is surrounded by them and might even be at least nominally part of a civilized nation. But in any case, the isolation offered by their hills make Hillmen quite independent, and it is not uncommon for them to sally forth from their mountain fastness to prey upon softer people, forcibly collecting tribute from all who trespass their land.</div> <div>Nomads roam the empty wastes beyond the civilized cities; quick to strike, and bound by no laws. Nomads live with their animals and usually ride into battle with them; they feel ill at ease without them. Nomadic and Hillmen characters begin play with the following modifiers:</div> <ul> <li>7 bonus Skill points related to Survival, Climbing, Animal Ken, etc.</li> </ul>"
+    },
+    {
+        "key": "culture-d",
+        "label": "Civilised",
+        "description": "<div>Savages and Hillmen eventually gather together to cultivate the land, build great cities, develop trade, and study medicine, mathematics and languages. In the civilized lands dwell noble knights, wise kings, and learned sages — as well as greedy merchants and cunning thieves. Civilized characters begin play with no particular advantages or disadvantages.</div>"
+    },
+    {
+        "key": "culture-e",
+        "label": "Decadent",
+        "description": "<div>Great civilizations reach their peak and eventually start to decline. Such fallen empires are ruled by jaded nobles, corrupt priests and wicked slave-traders. Demon-worship, human sacrifice and drug abuse is all too common in these cultures. Decadent characters begin play with the following modifiers:</div> <ul> <li>-1 to Tenacity; minimum 1, maximum 7</li> <li>Player&rsquo;s choice of either -1 to Brawn (minimum 1, maximum 7) or one Poor Asset related to mental handicaps like Addiction, Sadism, etc.</li> </ul>"
+    },
+    {
+        "key": "culture-f",
+        "label": "Degenerate",
+        "description": "<div>The last survivors of decadent civilizations start to feud over dwindling resources, or are driven away by stronger cultures. Fleeing into the wilderness, or deep underground beneath their ruins, they start to inbreed and devolve into something no longer entirely human. Degenerates may outwardly resemble savages, but they carry the evil taint of fallen empires. Degenerate characters begin play with the following modifiers:</div> <ul> <li>-1 to three Attributes; minimum 1, maximum 7</li> <li>Two Poor Assets chosen by player, focused on bodily handicaps and gruesome mental illnesses such as Necrophilia, Inhuman, etc.</li> </ul>"
+    }
+]

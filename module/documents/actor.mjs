@@ -47,11 +47,8 @@ export class BotitActor extends Actor {
     // Make modifications to data here. For example:
     const data = actorData.data;
 
-    // Loop through ability scores, and add their modifiers to our sheet output.
-    for (let [key, skill] of Object.entries(data.skills)) {
-      // Calculate the final value of the skill
-      skill.value = skill.baseValue + (skill.augmented ? 2 : 0) + skill.modifier;
-    }
+    // this._setFakeData(data);
+    this._getDerivedAttributes(data);
   }
 
   /**
@@ -64,6 +61,48 @@ export class BotitActor extends Actor {
     this._getHeroRollData(data);
 
     return data;
+  }
+
+  _setFakeData(data) {
+    if (data.fake) {
+      return;
+    }
+
+    const bio = {
+      culture: "Nordlander",
+      gender: "Male",
+      height: 1.86,
+      weight: 89
+    };
+    data.bio = bio;
+
+    data.lootLevel = 0;
+
+    const passions = {
+      "1": { label: "Passion 1", value: 1 },
+      "2": { label: "Passion 2", value: 2 },
+      "3": { label: "Passion 3", value: 3 },
+      "4": { label: "Passion 4", value: 4 },
+      drama: 5
+    };
+    data.passions = passions;
+
+    data.fake = true;
+  }
+
+  _getDerivedAttributes(data) {
+    const att = data.attributes;
+    const derivedAttributes = {};
+    data.derivedAttributes = derivedAttributes;
+  
+    derivedAttributes.reflex = Math.ceil((att.cunning + att.daring) / 2);
+    derivedAttributes.aim = Math.ceil((att.sagacity + att.cunning) / 2);
+    derivedAttributes.knockdown = Math.ceil((att.brawn + att.daring) / 2);
+    derivedAttributes.knockout = Math.ceil((att.brawn + att.tenacity) / 2);
+    derivedAttributes.move = Math.ceil((att.brawn + att.cunning + att.daring) / 3);
+
+    // TODO missing bonus due to known Mysteries
+    derivedAttributes.power = Math.ceil((att.sagacity + att.tenacity + att.brawn) / 3);
   }
 
   /**

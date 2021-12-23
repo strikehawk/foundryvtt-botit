@@ -1,7 +1,6 @@
 import { BOTIT } from "../helpers/config.mjs";
-
-/** @type {BotitSettings} */
-const botitGlobal = BOTIT;
+import { ItemManagerBase } from "./item.manager.base.mjs";
+import { ItemSkillsManager } from "./item-skills.manager.mjs";
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
@@ -25,6 +24,9 @@ export class BotitActorSheet extends ActorSheet {
     return `systems/${BOTIT.systemFolder}/templates/actor/actor-${this.actor.data.type}-sheet.html`;
   }
 
+  /** @type {ItemManagerBase[]} */
+  _itemManagers;
+
   /* -------------------------------------------- */
 
   /** @override */
@@ -44,6 +46,8 @@ export class BotitActorSheet extends ActorSheet {
 
     // Prepare Hero data and items.
     if (actorData.type == 'hero') {
+      this._itemManagers = this._getItemManagers(context);
+
       this._prepareItems(context);
       this._prepareCharacterData(context);
       this._computeModifiers(context);
@@ -58,6 +62,14 @@ export class BotitActorSheet extends ActorSheet {
     return context;
   }
 
+  _getItemManagers(context) {
+    this._skillsManager = new ItemSkillsManager(context);
+
+    return [
+      this._skillsManager
+    ];
+  }
+
   /**
    * Organize and classify Items for Character sheets.
    *
@@ -68,34 +80,28 @@ export class BotitActorSheet extends ActorSheet {
   _prepareItems(context) {
     // Initialize containers.
     const gear = [];
-    let archetype;
-    let profile;
 
     // Iterate through items, allocating to containers
     for (let i of context.items) {
       i.img = i.img || DEFAULT_TOKEN;
+
+      for (const mgr of this._itemManagers) {
+        mgr.parseItem(i);
+      }
+
       // Append to gear.
       if (i.type === "item") {
         gear.push(i);
       }
-      // Set archetype.
-      else if (i.type === "hero-archetype") {
-        archetype = i;
-      }
-      // Set profile.
-      else if (i.type === 'profile') {
-        profile = i;
-      }
+    }
+
+    for (const mgr of this._itemManagers) {
+      mgr.finalize();
     }
 
     // Assign and return
     context.gear = gear;
-    context.archetype = archetype;
-    context.profile = profile;
-
-    if (context.profile) {
-      ItemSheetProfileBehavior.patchItem(context.profile);
-    }
+    context.skills = this._skillsManager.collection;
   }
 
   /**
@@ -106,6 +112,8 @@ export class BotitActorSheet extends ActorSheet {
    * @return {undefined}
    */
   _prepareCharacterData(context) {
+    return;
+
     context.data.viewMode = true;
 
     if (!context.archetype) {
@@ -150,7 +158,7 @@ export class BotitActorSheet extends ActorSheet {
 
       skill = foundry.utils.deepClone(v);
       skill.id = skillId;
-      skill.label = game.i18n.localize(botitGlobal.skills[k]) ?? k;
+      skill.label = game.i18n.localize(BOTIT.skills[k]) ?? k;
       skill.uuid = getSkillIdentifier(k, skill);
 
       skill = Object.assign(currentSkill, skill);
@@ -206,6 +214,8 @@ export class BotitActorSheet extends ActorSheet {
   }
 
   _computeModifiers(context) {
+    return;
+
     // Handle resources.
     this._processModifiableValue(context.data.resources.hp.max);
     this._processModifiableValue(context.data.resources.wounds.max);
@@ -224,15 +234,15 @@ export class BotitActorSheet extends ActorSheet {
     let sumModifiers;
 
     // Get the system value definition
-    let systemValue = botitGlobal.values.get(v.id);
+    let systemValue = BOTIT.values.get(v.id);
     if (!systemValue) {
       console.error(v);
     }
 
-    const valueType = systemValue.type === botitGlobal.valueTypes.ROLL_EXPRESSION ? botitGlobal.valueTypes.ROLL_EXPRESSION : botitGlobal.valueTypes.NUMERICAL;
+    const valueType = systemValue.type === BOTIT.valueTypes.ROLL_EXPRESSION ? BOTIT.valueTypes.ROLL_EXPRESSION : BOTIT.valueTypes.NUMERICAL;
 
     // Compute sum of modifiers
-    sumModifiers = valueType === botitGlobal.valueTypes.ROLL_EXPRESSION ? "" : 0;
+    sumModifiers = valueType === BOTIT.valueTypes.ROLL_EXPRESSION ? "" : 0;
     if (v.modifiers) {
       for (const mod of v.modifiers) {
         sumModifiers += mod.modifier;
@@ -243,7 +253,7 @@ export class BotitActorSheet extends ActorSheet {
     v.modifier = sumModifiers;
 
     // Calculate the final value
-    const baseValue = valueType === botitGlobal.valueTypes.ROLL_EXPRESSION ? v.baseValue.toString() : v.baseValue;
+    const baseValue = valueType === BOTIT.valueTypes.ROLL_EXPRESSION ? v.baseValue.toString() : v.baseValue;
     v.value = baseValue + v.modifier;
   }
 
@@ -264,8 +274,6 @@ export class BotitActorSheet extends ActorSheet {
     // Everything below here is only needed if the sheet is editable
     if (!this.isEditable) return;
 
-    setupActorSkillFormListeners(html, this);
-
     // Add Inventory Item
     html.find('.profile-remove').click(ev => {
       const index = $(ev.currentTarget).data("index");
@@ -280,10 +288,13 @@ export class BotitActorSheet extends ActorSheet {
 
     // Delete Inventory Item
     html.find('.item-delete').click(ev => {
-      const li = $(ev.currentTarget).parents(".item");
+      // const li = $(ev.currentTarget).parents(".item");
+      const li = $(ev.currentTarget);
       const item = this.actor.items.get(li.data("itemId"));
       item.delete();
-      li.slideUp(200, () => this.render(false));
+
+      this.render(false);
+      // li.slideUp(200, () => this.render(false));
     });
 
     // Active Effect management
@@ -362,7 +373,7 @@ export class BotitActorSheet extends ActorSheet {
     }
   }
 
-  async _updateObject(event, formData) {
-    super._updateObject(event, formData);
-  }
+  // async _updateObject(event, formData) {
+  //   super._updateObject(event, formData);
+  // }
 }

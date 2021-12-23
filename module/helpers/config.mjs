@@ -1,6 +1,8 @@
 import attributesData from "../../data/attributes.json" assert { type: "json" };
 import skillsData from "../../data/skills.json" assert { type: "json" };
 
+import { TalentsConfig } from "./talents-config.mjs";
+
 // /**
 //  * The set of Skills used within the system, and their translation key.
 //  * @type {Object}
@@ -153,7 +155,7 @@ export class BotitSettings {
   /**
    * @property The set of Attributes used within the system.
    * 
-   * @type {Object}
+   * @type {Object.<string, Attribute>}
    * @memberof BotitSettings
    */
    get attributes() {
@@ -163,11 +165,21 @@ export class BotitSettings {
   /**
    * @property The set of Skills used within the system.
    * 
-   * @type {Object}
+   * @type {Object.<string, Skill>}
    * @memberof BotitSettings
    */
   get skills() {
     return this._skills;
+  }
+
+  /**
+   * @property The set of Talents used within the system.
+   * 
+   * @type {TalentsConfig}
+   * @memberof BotitSettings
+   */
+  get talents() {
+    return this._talents;
   }
 
   /**
@@ -181,6 +193,7 @@ export class BotitSettings {
   constructor() {
     this._attributes = this._loadAttributes();
     this._skills = this._loadSkills();
+    this._talents = new TalentsConfig();
   }
 
   _loadAttributes() {
