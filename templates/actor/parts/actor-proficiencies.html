@@ -1,0 +1,14 @@
+<div class="fxLayoutColumn fxLayoutGap-8">
+    {{#each proficiencies as |prof id|}}
+    <div class="fxLayoutRow align-items-baseline fxLayoutGap-8">
+        <div class="fxLayoutRow">
+            <div class="field-label">{{prof.label}}</div>
+        </div>
+        <div class="dotted-line fxFlex"></div>
+        <div class="fxLayoutRow fxLayoutGap-4">
+            <input name="data.proficiencies.{{prof.key}}" type="text" class="numerical-value" data-dtype="Number"
+                value="{{numberFormat prof.value decimals=0}}" />
+        </div>
+    </div>
+    {{/each}}
+</div>

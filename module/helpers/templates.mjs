@@ -11,6 +11,7 @@ export const preloadHandlebarsTemplates = async function () {
     // Actor partials.
     `systems/${BOTIT.systemFolder}/templates/actor/parts/actor-attributes.html`,
     `systems/${BOTIT.systemFolder}/templates/actor/parts/actor-skills.html`,
+    `systems/${BOTIT.systemFolder}/templates/actor/parts/actor-proficiencies.html`,
     `systems/${BOTIT.systemFolder}/templates/actor/parts/actor-blank.html`,
     // `systems/${BOTIT.systemFolder}/templates/actor/parts/actor-talents.html`,
     // `systems/${BOTIT.systemFolder}/templates/actor/parts/actor-profile.html`,

@@ -1,6 +1,7 @@
 import { BOTIT } from "../helpers/config.mjs";
 import { ItemManagerBase } from "./item.manager.base.mjs";
-import { ItemSkillsManager } from "./item-skills.manager.mjs";
+import { ItemValueManager } from "./item-value.manager.mjs";
+import { ActorProficienciesManager } from "./actor-proficiencies.manager.mjs";
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
@@ -63,10 +64,12 @@ export class BotitActorSheet extends ActorSheet {
   }
 
   _getItemManagers(context) {
-    this._skillsManager = new ItemSkillsManager(context);
+    this._skillsManager = new ItemValueManager("skill", context.data.skills, context);
+    // this._proficienciesManager = new ItemValueManager("proficiency", context.data.proficiencies, context);
 
     return [
-      this._skillsManager
+      this._skillsManager,
+      // this._proficienciesManager
     ];
   }
 
@@ -102,6 +105,8 @@ export class BotitActorSheet extends ActorSheet {
     // Assign and return
     context.gear = gear;
     context.skills = this._skillsManager.collection;
+    // context.proficiencies = this._proficienciesManager.collection;
+    context.proficiencies = ActorProficienciesManager.getCollection(context);
   }
 
   /**
@@ -288,13 +293,11 @@ export class BotitActorSheet extends ActorSheet {
 
     // Delete Inventory Item
     html.find('.item-delete').click(ev => {
-      // const li = $(ev.currentTarget).parents(".item");
       const li = $(ev.currentTarget);
       const item = this.actor.items.get(li.data("itemId"));
       item.delete();
 
       this.render(false);
-      // li.slideUp(200, () => this.render(false));
     });
 
     // Active Effect management
@@ -373,7 +376,32 @@ export class BotitActorSheet extends ActorSheet {
     }
   }
 
-  // async _updateObject(event, formData) {
-  //   super._updateObject(event, formData);
-  // }
+  async _updateObject(event, formData) {
+    // Remove proficiencies if value equals to defaulted one
+    const defaultedProficiencies = this.actor.data.data.defaultedProficiencies;
+
+    let key;
+    let formValue;
+    let defaultedValue;
+    for (const prof of Object.values(BOTIT.proficiencies)) {
+      key = `data.proficiencies.${prof.key}`;
+      formValue = formData[key];
+
+      if (formValue === 0) {
+        // Remove
+        delete formData[key];
+
+        continue;
+      }
+
+      defaultedValue = defaultedProficiencies[prof.key] || 0;
+      if (formValue === defaultedValue) {
+        // Remove
+        delete formData[key];
+        continue;
+      }
+    }
+
+    super._updateObject(event, formData);
+  }
 }

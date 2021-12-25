@@ -1,37 +1,9 @@
 import attributesData from "../../data/attributes.json" assert { type: "json" };
 import skillsData from "../../data/skills.json" assert { type: "json" };
+import proficienciesData from "../../data/proficiencies.json" assert { type: "json" };
 
 import { TalentsConfig } from "./talents-config.mjs";
 
-// /**
-//  * The set of Skills used within the system, and their translation key.
-//  * @type {Object}
-//  */
-// BOTIT.skills = {
-//   "acrobatie": "BOTIT.Skills.acrobatie",
-//   "athletisme": "BOTIT.Skills.athletisme",
-//   "autorite": "BOTIT.Skills.autorite",
-//   "combat-cac": "BOTIT.Skills.combat-cac",
-//   "combat-distance": "BOTIT.Skills.combat-distance",
-//   "connaissance": "BOTIT.Skills.connaissance",
-//   "defense": "BOTIT.Skills.defense",
-//   "discretion": "BOTIT.Skills.discretion",
-//   "documentation": "BOTIT.Skills.documentation",
-//   "eloquence": "BOTIT.Skills.eloquence",
-//   "equitation": "BOTIT.Skills.equitation",
-//   "intellect": "BOTIT.Skills.intellect",
-//   "langue": "BOTIT.Skills.langue",
-//   "muscles": "BOTIT.Skills.muscles",
-//   "pilotage": "BOTIT.Skills.pilotage",
-//   "perception": "BOTIT.Skills.perception",
-//   "psychologie": "BOTIT.Skills.psychologie",
-//   "reflexes": "BOTIT.Skills.reflexes",
-//   "resistance": "BOTIT.Skills.resistance",
-//   "soins": "BOTIT.Skills.soins",
-//   "survie": "BOTIT.Skills.survie",
-//   "technique": "BOTIT.Skills.technique",
-//   "volonte": "BOTIT.Skills.volonte"
-// };
 
 // BOTIT.valueTypes = {
 //   NUMERICAL: "numerical",
@@ -141,6 +113,48 @@ export class Skill {
   description;
 }
 
+export class Proficiency {
+    /**
+   * @property The unique identifier of the proficiency.
+   * 
+   * @type {string}
+   * @memberof Proficiency
+   */
+     key;
+
+     /**
+      * @property The label of the proficiency.
+      * 
+      * @type {string}
+      * @memberof Proficiency
+      */
+     label;
+   
+     /**
+      * @property The description of the proficiency.
+      * 
+      * @type {string}
+      * @memberof Proficiency
+      */
+     description;
+   
+     /**
+      * @property True if the proficiency uses a ranged weapon; false otherwise.
+      * 
+      * @type {boolean}
+      * @memberof Proficiency
+      */
+     ranged;
+
+     /**
+      * @property The default value of the proficiency based on other proficiencies.
+      * 
+      * @type {Object.<string, number>}
+      * @memberof Proficiency
+      */
+     defaults;
+}
+
 export class BotitSettings {
   /**
    * @property The name of the folder containing the system.
@@ -183,6 +197,16 @@ export class BotitSettings {
   }
 
   /**
+   * @property The set of Talents used within the system.
+   * 
+   * @type {Object.<string, Proficiency>}
+   * @memberof BotitSettings
+   */
+   get proficiencies() {
+    return this._proficiencies;
+  }
+
+  /**
    * @property The list of values supported by the game system.
    * 
    * @type {Map<string, SystemValue>}
@@ -194,6 +218,7 @@ export class BotitSettings {
     this._attributes = this._loadAttributes();
     this._skills = this._loadSkills();
     this._talents = new TalentsConfig();
+    this._proficiencies = this._loadProficiencies();
   }
 
   _loadAttributes() {
@@ -214,6 +239,16 @@ export class BotitSettings {
     }
 
     return skills;
+  }
+  
+  _loadProficiencies() {
+    const proficiencies = {};
+
+    for (const prof of proficienciesData) {
+      proficiencies[prof.key] = prof;
+    }
+
+    return proficiencies;
   }
 }
 

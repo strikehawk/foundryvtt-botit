@@ -1,3 +1,5 @@
+import { BOTIT } from "../helpers/config.mjs";
+
 /**
  * Extend the base Actor document by defining a custom roll data structure which is ideal for the Simple system.
  * @extends {Actor}
@@ -49,6 +51,7 @@ export class BotitActor extends Actor {
 
     // this._setFakeData(data);
     this._getDerivedAttributes(data);
+    this._getDefaultedProficiencies(data);
   }
 
   /**
@@ -103,6 +106,49 @@ export class BotitActor extends Actor {
 
     // TODO missing bonus due to known Mysteries
     derivedAttributes.power = Math.ceil((att.sagacity + att.tenacity + att.brawn) / 3);
+  }
+
+  _getDefaultedProficiencies(data) {
+    const proficiencies = BOTIT.proficiencies;
+    const actorProf = data.proficiencies;
+    const actorDefaultedProf = {};
+    data.defaultedProficiencies = actorDefaultedProf;
+
+    const hasActorProf = function(key) {
+      return typeof actorProf[key] === "number";
+    };
+
+    const getCurrentValue = function(key) {
+      const currentValue = typeof actorProf[key] === "number" ? actorProf[key] : 0;
+      const defaultedValue = typeof actorDefaultedProf[key] === "number" ? actorDefaultedProf[key] : 0;
+
+      return Math.max(currentValue, defaultedValue);
+    };
+
+    let value;
+    let currentValue;
+    let defaultedValue;
+    for (const prof of Object.values(proficiencies)) {
+      if (hasActorProf(prof.key)) {
+        // Actor has the proficiency. No need to search for a default.
+        value = actorProf[prof.key];
+
+        // Try to create all defaults associated to this proficiency
+        for (const [k, v] of Object.entries(prof.defaults)) {
+          defaultedValue = value + v;
+          
+          if (defaultedValue <= 0) {
+            continue;
+          }
+
+          currentValue = getCurrentValue(k);
+
+          if (currentValue < defaultedValue) {
+            actorDefaultedProf[k] = defaultedValue;
+          }
+        }
+      }
+    }
   }
 
   /**

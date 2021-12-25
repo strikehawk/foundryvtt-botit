@@ -1,0 +1,250 @@
+[
+    {
+        "key": "brawling",
+        "label": "Brawling",
+        "description": "<p>The one weapon everyone has is his body. Variations of unarmed combat exist all over the world. This version is popular throughout the western half. Brawling involves, first and foremost, punching and kicking - delivered by means of the Bash Maneuver &ndash;and also grappling and plenty of dirty tricks. While mostly an unarmed Proficiency, the use of knuckledusters, saps and the like is also incorporated.</p>",
+        "defaults": {
+            "cut-thrust": -2,
+            "dagger": -1,
+            "greatsword": -4,
+            "longsword": -4,
+            "mass-weapon-shield": -4,
+            "pole-arm": -3,
+            "spear-shield": -4,
+            "sword-shield": -4,
+            "wrestling": -1
+        }
+    },
+    {
+        "key": "cut-thrust",
+        "label": "Cut & Thrust",
+        "description": "<p>This Proficiency refers to swords that are usually wielded in a quick fencing style, not in conjunction with a shield. This includes such blades as sideswords, rapiers, and perhaps sabres. With this Proficiency, the sword is often accompanied by a buckler, dagger or arming glove in the off hand.</p>",
+        "defaults": {
+            "brawling": -4,
+            "dagger": -4,
+            "greatsword": -4,
+            "longsword": -3,
+            "mass-weapon-shield": -3,
+            "pole-arm": -4,
+            "spear-shield": -3,
+            "sword-shield": -2,
+            "wrestling": -4
+        }
+    },
+    {
+        "key": "dagger",
+        "label": "Dagger",
+        "description": "<p>This small, easily hidden weapon comes in many forms. Found in every place in the world, daggers and knives are used as both tools and instruments of death. Daggers are extremely popular civilian weapons, and are carried by almost everyone. This Proficiency covers stilettos, poniards, rondels, and all manner of short stabbing and slicing blades.</p>",
+        "defaults": {
+            "brawling": -1,
+            "cut-thrust": -2,
+            "greatsword": -4,
+            "longsword": -2,
+            "mass-weapon-shield": -3,
+            "pole-arm": -4,
+            "spear-shield": -4,
+            "sword-shield": -4,
+            "wrestling": -2
+        }
+    },
+    {
+        "key": "greatsword",
+        "label": "Greatsword",
+        "description": "<p>The true two-handed sword is an enormous weapon. It resembles a spear more than a sword in actual use, and is wielded frequently with a wide, half-swording grip. Greatswords are generally at least 1.5 meters long -about a quarter of that being hilt &ndash; and they often sport a second pair of cross guards. They are fearsome weapons with great range, but the greatswordsman is easily overcome by any fighter agile enough to get into close range.</p>",
+        "defaults": {            
+            "brawling": -4,
+            "cut-thrust": -3,
+            "dagger": -4,
+            "longsword": -2,
+            "mass-weapon-shield": -4,
+            "pole-arm": -2,
+            "spear-shield": -4,
+            "sword-shield": -3,
+            "wrestling": -4
+        }
+    },
+    {
+        "key": "lance",
+        "label": "Lance",
+        "description": "As fighting from horseback became more and more practical and efficient, heavy cavalry came into being. Cavalry’s weapon of choice in an opening charge is the lance, a long spear, frequently of specialized design. This weapon is found anywhere there are knights or heavy cavalry. Lances range from 2.5 to just over 4 meters in length. They are usually butted under the right arm and used with a shield. Lances, though made of wood, are usually capped with a long steel or iron point. A sporting version, the jousting lance, has a blunted tip for tournaments. The primary advantages to a lance are its range and power in a charge, where it uses the mount’s full BN, not half the riders BN, to calculate Impact Rating.",
+        "defaults": {            
+            "pole-arm": -3,
+            "spear-shield": -2
+        }
+    },
+    {
+        "key": "longsword",
+        "label": "Longsword",
+        "description": "<p>For those warriors who prefer to fight without shields, large swords are very popular. They are fierce weapons, capable of heavy damage when cleaving or thrusting, and they are excellent for complex maneuvering and countering. The Longsword Proficiency incorporates all swords that are primarily intended for two-handed wielding. However Longwords are still short enough to be wielded in just one hand with little or no discomfort. The primary advantages of these weapons include extended range, great cleaving power, and a wide variety of Maneuvers.</p>",
+        "defaults": {            
+            "brawling": -4,
+            "cut-thrust": -4,
+            "dagger": -4,
+            "greatsword": -1,
+            "mass-weapon-shield": -4,
+            "pole-arm": -3,
+            "spear-shield": -3,
+            "sword-shield": -2,
+            "wrestling": -3
+        }
+    },
+    {
+        "key": "mass-weapon-shield",
+        "label": "Mass Weapon & Shield",
+        "description": "<p>Since the earliest clubs, mass weapons have found their place in warfare. Alongside the development of better armor, clubs and farming tools were transformed into battle- axes, picks, flails, morning stars, and maces. These weapons are in use the world over and are particularly popular both with the peasant infantryman (these weapons are cheap) and the armored gentry (these weapons are especially effective against tougher armors).Mass weapons include any single-handed (and occasionally two-handed) weapon that is particularly heavy on the business end. These weapons&rsquo; balance makes them slow on the parry and commends the use of constant evasion or- more commonly- shields. Most axes and hammers are fitted with a secondary spike or hammer on the back and/or top. To flip the weapon over, spend 1 MP <em><strong>if done during a Combat Round</strong></em>. As with Pole-arms, exact Maneuvers are dependent on the weapon at hand, and discretion and common sense need to be used. This Proficiency may also be used without a shield at no penalty, but any shieldbased Maneuvers are, in that case, impossible.</p>",
+        "defaults": {            
+            "brawling": -3,
+            "cut-thrust": -2,
+            "dagger": -4,
+            "greatsword": -4,
+            "longsword": -4,
+            "pole-arm": -3,
+            "spear-shield": -3,
+            "sword-shield": -2,
+            "wrestling": -4
+        }
+    },
+    {
+        "key": "black-powder-weapon",
+        "label": "Black Powder Weapon",
+        "description": "<p>Defaults from Bow at -3 and Crossbow at -2.</p>",
+        "ranged": true,
+        "defaults": {
+            "bow": -3,
+            "crossbow": -3
+        }
+    },
+    {
+        "key": "bow",
+        "label": "Bow",
+        "description": "<p>Defaults from Crossbow at -4.</p>",
+        "ranged": true,
+        "defaults": {
+            "crossbow": -4
+        }
+    },
+    {
+        "key": "crossbow",
+        "label": "Crossbow",
+        "description": "<p>Defaults from Black Powder Weapon and Bow at -2.</p>",
+        "ranged": true,
+        "defaults": {
+            "black-powder-weapon": -2,
+            "bow": -2
+        }
+    },
+    {
+        "key": "sling",
+        "label": "Sling",
+        "description": "<p>Defaults from Thrown Rock at -4.</p>",
+        "ranged": true,
+        "defaults": {
+            "thrown-rock": -4
+        }
+    },
+    {
+        "key": "spear-javelin",
+        "label": "Spear / Javelin",
+        "description": "<p>Defaults from Pole-arm and Spear & Shield at -3.</p>",
+        "ranged": true,
+        "defaults": {
+            "pole-arm": -3,
+            "spear-shield": -3
+        }
+    },
+    {
+        "key": "thrown-knife",
+        "label": "Thrown Knife",
+        "description": "<p>Defaults from Dagger at -4.</p>",
+        "ranged": true,
+        "defaults": {
+            "dagger": -4
+        }
+    },
+    {
+        "key": "thrown-axe",
+        "label": "Thrown Axe",
+        "description": "<p>Defaults from Mass Weapon & Shield -4.</p>",
+        "ranged": true,
+        "defaults": {
+            "mass-weapon-shield": -4
+        }
+    },
+    {
+        "key": "thrown-rock",
+        "label": "Thrown Rock & Others",
+        "description": "<p>Thrown Rock (or irregularly shaped object) defaults from Sling and any other Missile Weapon Proficiency for thrown weapons -3.</p>",
+        "ranged": true,
+        "defaults": {
+            "sling": -3,
+            "thrown-knife": -3,
+            "throw-axe": -3
+        }
+    },
+    {
+        "key": "pole-arm",
+        "label": "Pole-arm",
+        "description": "<p>This broad group of weapons encompasses items as ancient as the spear; as new as the halberd; and as everlasting as the quarterstaff. It includes all staff or pole-mounted weapons at least 1.5 m long, though most range anywhere from under 2 m to just over 2.5 m.</p><p>They have the advantage of range and often speed, but are hard to conceal or transport. Available Maneuvers vary greatly due to the design of each individual weapon. Use discretion and common sense.</p>",
+        "defaults": {
+            "brawling": -4,
+            "cut-thrust": -3,
+            "dagger": -4,
+            "greatsword": -2,
+            "lance": -3,
+            "longsword": -2,
+            "mass-weapon-shield": -3,
+            "spear-shield": -2,
+            "sword-shield": -4,
+            "wrestling": -4
+        }
+    },
+    {
+        "key": "spear-shield",
+        "label": "Spear & Shield",
+        "description": "<p>This Proficiency incorporates the use of a one-handed spear used either over or under arm, frequently together with a sizeable shield in the other hand. This method of fighting and combination of equipment is the mainstay of countless armies and warrior cultures throughout the ages. While not this Proficiency&rsquo;s focus, there is also the option to fight without shield, with the spear held in either one or, more commonly, two hands. In this case all shield-based Maneuvers are, of course, not available.</p>",
+        "defaults": {
+            "brawling": -4,
+            "cut-thrust": -2,
+            "dagger": -4,
+            "greatsword": -3,
+            "lance": -2,
+            "longsword": -3,
+            "mass-weapon-shield": -3,
+            "pole-arm": -3,
+            "sword-shield": -3,
+            "wrestling": -4
+        }
+    },
+    {
+        "key": "sword-shield",
+        "label": "Sword & Shield",
+        "description": "<p>This Proficiency involves any one-handed sword and a shield. Although this Proficiency could be used without a shield with no penalty, any shield-based Maneuvers would be impossible.</p>",
+        "defaults": {
+            "brawling": -4,
+            "cut-thrust": -2,
+            "dagger": -4,
+            "greatsword": -3,
+            "longsword": -2,
+            "mass-weapon-shield": -2,
+            "pole-arm": -4,
+            "spear-shield": -3,
+            "wrestling": -4
+        }
+    },
+    {
+        "key": "wrestling",
+        "label": "Wrestling",
+        "description": "<p>Wrestling, though popular as a sport, is really the most desperate of all battle techniques. As with Brawling, Wrestling is always an option for the unarmed character. When fighters find themselves unarmed on the ground in the course of battle or a duel, knowledge of the Wrestling Proficiency comes in handy.</p>",
+        "defaults": {
+            "brawling": -1,
+            "cut-thrust": -4,
+            "dagger": -2,
+            "greatsword": -4,
+            "longsword": -3,
+            "mass-weapon-shield": -4,
+            "pole-arm": -4,
+            "spear-shield": -4,
+            "sword-shield": -4
+        }
+    }
+]

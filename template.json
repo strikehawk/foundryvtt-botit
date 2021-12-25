@@ -63,12 +63,14 @@
                 "attributes",
                 "priorities"
             ],
-            "skills": {}
+            "skills": {},
+            "proficiencies": {}
         }
     },
     "Item": {
         "types": [
-            "skill"
+            "skill",
+            "proficiency"
         ],
         "templates": {
             "genericItem": {
@@ -94,6 +96,13 @@
                 "genericItem"
             ],
             "attribute": ""
+        },
+        "proficiency": {
+            "templates": [
+                "genericItem"
+            ],
+            "ranged": false,
+            "defaults": {}
         }
     }
 }
