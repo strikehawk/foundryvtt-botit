@@ -1,0 +1,266 @@
+[
+    {
+        "key": "camail",
+        "label": "Camail / Aventail / Gorget / Bevor",
+        "description": "",
+        "zones": ["4","5L","5R"]
+    },
+    {
+        "key": "war-helm",
+        "label": "Kettle / War Helm",
+        "description": "",
+        "zones": ["1"]
+    },
+    {
+        "key": "pot-helm",
+        "label": "Pot Helm / Bascinet",
+        "description": "",
+        "zones": ["1", "3"]
+    },
+    {
+        "key": "coif",
+        "label": "Coif",
+        "description": "",
+        "zones": ["1", "4", "5L", "5R"]
+    },
+    {
+        "key": "full-helm",
+        "label": "Full Helm",
+        "description": "",
+        "zones": ["1", "2", "3"]
+    },
+    {
+        "key": "gorget",
+        "label": "Gorget / Neck-stock",
+        "description": "",
+        "zones": ["4"]
+    },
+    {
+        "key": "gambeson",
+        "label": "Gambeson / Aketon / Action",
+        "description": "",
+        "zones": ["4", "5L", "5R", "6", "7L", "7R", "8", "11L", "11R", "12L", "12R", "13L", "13R", "19", "20"]
+    },
+    {
+        "key": "habergeon",
+        "label": "Habergeon / Birnie / Mail Shirt / Doublet / Jack / Vest",
+        "description": "",
+        "zones": ["5L", "5R", "6", "7L", "7R", "8", "11L", "11R", "12L", "12R", "13L", "13R", "19", "20"]
+    },
+    {
+        "key": "short-sleeved-shirt",
+        "label": "Short-sleeved Shirt",
+        "description": "",
+        "zones": ["5L", "5R", "6", "7L", "7R", "8", "9L", "9R", "10", "19", "20"]
+    },
+    {
+        "key": "sleeveless-shirt",
+        "label": "Sleeveless Shirt",
+        "description": "",
+        "zones": ["5L", "5R", "6", "7L", "7R", "8", "9L", "9R", "10", "19", "20"]
+    },
+    {
+        "key": "cuirass",
+        "label": "Cuirass",
+        "description": "",
+        "zones": ["6", "7L", "7R", "8"]
+    },
+    {
+        "key": "hauberk",
+        "label": "Hauberk",
+        "description": "",
+        "zones": ["5L", "5R", "6", "7L", "7R", "8", "9L", "9R", "10", "11L", "11R", "12L", "12R", "13L", "13R", "15L", "15R", "19", "20"]
+    },
+    {
+        "key": "pauldron-left",
+        "label": "Pauldron / Rerebrace (Left)",
+        "description": "",
+        "zones": ["5L"]
+    },
+    {
+        "key": "pauldron-right",
+        "label": "Pauldron / Rerebrace (Right)",
+        "description": "",
+        "zones": ["5R"]
+    },
+    {
+        "key": "pauldron-pair",
+        "label": "Pauldron / Rerebrace (Pair)",
+        "description": "",
+        "zones": ["5L", "5R"]
+    },
+    {
+        "key": "couter-left",
+        "label": "Couter / Cop (Left)",
+        "description": "",
+        "zones": ["12L"]
+    },
+    {
+        "key": "couter-right",
+        "label": "Couter / Cop (Right)",
+        "description": "",
+        "zones": ["12R"]
+    },
+    {
+        "key": "couter-pair",
+        "label": "Couter / Cop (Pair)",
+        "description": "",
+        "zones": ["12L", "12R"]
+    },
+    {
+        "key": "vambrace-left",
+        "label": "Vambrace (Left)",
+        "description": "",
+        "zones": ["13L"]
+    },
+    {
+        "key": "vambrace-right",
+        "label": "Vambrace (Right)",
+        "description": "",
+        "zones": ["13R"]
+    },
+    {
+        "key": "vambrace-pair",
+        "label": "Vambrace (Pair)",
+        "description": "",
+        "zones": ["13L", "13R"]
+    },
+    {
+        "key": "gauntlet-left",
+        "label": "Gauntlet (Left)",
+        "description": "",
+        "zones": ["14L"]
+    },
+    {
+        "key": "gauntlet-right",
+        "label": "Gauntlet (Right)",
+        "description": "",
+        "zones": ["14R"]
+    },
+    {
+        "key": "gauntlet-pair",
+        "label": "Gauntlet (Pair)",
+        "description": "",
+        "zones": ["14L", "14R"]
+    },
+    {
+        "key": "chausses",
+        "label": "Chausses",
+        "description": "",
+        "zones": ["9L", "9R", "10", "15L", "15R", "16L", "16R", "17L", "17R", "18L", "18R"]
+    },
+    {
+        "key": "leggings",
+        "label": "Leggings",
+        "description": "",
+        "zones": ["9L", "9R", "10", "15L", "15R", "16L", "16R", "17L", "17R"]
+    },
+    {
+        "key": "tassets",
+        "label": "Tassets",
+        "description": "",
+        "zones": ["9L", "9R", "10", "15L", "15R"]
+    },
+    {
+        "key": "cod-piece",
+        "label": "Cod Piece",
+        "description": "",
+        "zones": ["10"]
+    },
+    {
+        "key": "cuissart-left",
+        "label": "Cuissart (Left)",
+        "description": "",
+        "zones": ["15L"]
+    },
+    {
+        "key": "cuissart-right",
+        "label": "Cuissart (Right)",
+        "description": "",
+        "zones": ["15R"]
+    },
+    {
+        "key": "cuissart-pair",
+        "label": "Cuissart (Pair)",
+        "description": "",
+        "zones": ["15L", "15R"]
+    },
+    {
+        "key": "poleyn-left",
+        "label": "Poleyn (Left)",
+        "description": "",
+        "zones": ["16L"]
+    },
+    {
+        "key": "poleyn-right",
+        "label": "Poleyn (Right)",
+        "description": "",
+        "zones": ["16R"]
+    },
+    {
+        "key": "poleyn-pair",
+        "label": "Poleyn (Pair)",
+        "description": "",
+        "zones": ["16L", "16R"]
+    },
+    {
+        "key": "greave-left",
+        "label": "Greave (Left)",
+        "description": "",
+        "zones": ["17L"]
+    },
+    {
+        "key": "greave-right",
+        "label": "Greave (Right)",
+        "description": "",
+        "zones": ["17R"]
+    },
+    {
+        "key": "greave-pair",
+        "label": "Greave (Pair)",
+        "description": "",
+        "zones": ["17L", "17R"]
+    },
+    {
+        "key": "shoe-left",
+        "label": "Shoe / Sabaton / Soleret (Left)",
+        "description": "",
+        "zones": ["18L"]
+    },
+    {
+        "key": "shoe-right",
+        "label": "Shoe / Sabaton / Soleret (Right)",
+        "description": "",
+        "zones": ["18R"]
+    },
+    {
+        "key": "shoe-pair",
+        "label": "Shoe / Sabaton / Soleret (Pair)",
+        "description": "",
+        "zones": ["18L", "18R"]
+    },
+    {
+        "key": "boot-left",
+        "label": "Boot (Left)",
+        "description": "",
+        "zones": ["17L", "18L"]
+    },
+    {
+        "key": "boot-right",
+        "label": "Boot (Right)",
+        "description": "",
+        "zones": ["17R", "18R"]
+    },
+    {
+        "key": "boot-pair",
+        "label": "Boot (Pair)",
+        "description": "",
+        "zones": ["17L", "17R", "18L", "18R"]
+    },
+    {
+        "key": "full-body-suit",
+        "label": "Full Body Suit",
+        "description": "",
+        "zones": ["5L", "5R", "6", "7L", "7R", "8", "9L", "9R", "10", "11L", "11R", "12L", "12R", "13L", "13R", "15L", "15R", "16L", "16R", "17L", "17R", "18L", "18R", "19", "20"]
+    }
+]

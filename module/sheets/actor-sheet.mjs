@@ -2,6 +2,7 @@ import { BOTIT } from "../helpers/config.mjs";
 import { ItemManagerBase } from "./item.manager.base.mjs";
 import { ItemValueManager } from "./item-value.manager.mjs";
 import { ActorProficienciesManager } from "./actor-proficiencies.manager.mjs";
+import { ActorArmorDisplayer } from "./actor-armor.displayer.mjs";
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
@@ -59,6 +60,8 @@ export class BotitActorSheet extends ActorSheet {
 
     // // Prepare active effects
     // context.effects = prepareActiveEffectCategories(this.actor.effects);
+
+    this._armorManager = new ActorArmorDisplayer(context.actor);
 
     return context;
   }
@@ -268,6 +271,10 @@ export class BotitActorSheet extends ActorSheet {
   activateListeners(html) {
     super.activateListeners(html);
 
+    if (this._armorManager) {
+      this._armorManager.initialize(html);
+    }
+
     // Render the item sheet for viewing/editing prior to the editable check.
     html.find('.item-edit').click(ev => {
       const li = $(ev.currentTarget).parents(".item");
@@ -349,7 +356,7 @@ export class BotitActorSheet extends ActorSheet {
    * @param {Event} event   The originating click event
    * @private
    */
-  _onRoll(event) {
+  async _onRoll(event) {
     event.preventDefault();
     const element = event.currentTarget;
     const dataset = element.dataset;
@@ -366,7 +373,7 @@ export class BotitActorSheet extends ActorSheet {
     // Handle rolls that supply the formula directly.
     if (dataset.roll) {
       let label = dataset.label ? `[Skill] ${dataset.label}` : '';
-      let roll = new Roll(dataset.roll, this.actor.getRollData()).roll();
+      let roll = await new Roll(dataset.roll, this.actor.getRollData()).evaluate({ async: true });
       roll.toMessage({
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
         flavor: label,

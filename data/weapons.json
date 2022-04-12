@@ -1,0 +1,156 @@
+[
+    {
+        "key": "short-sword",
+        "label": "Short Sword",
+        "description": "A sword with a short, two-edged blade.",
+        "attacks": [
+            {
+                "key": "standard",
+                "label": "Standard",
+                "type": "melee",
+                "hands": 1,
+                "proficiency": "sword-shield",
+                "reach": ["S"],
+                "swing": {
+                    "ATN": 6,
+                    "DR": 0
+                },
+                "thrust": {
+                    "ATN": 6,
+                    "DR": 1
+                },
+                "blunt": {
+                    "ATN": 7,
+                    "DR": -2
+                },            
+                "DTN": 7
+            }
+        ]
+    },
+    {
+        "key": "arming-sword",
+        "label": "Arming Sword",
+        "description": "The basic, run-of-the-mill one-handed sword.",
+        "attacks": [
+            {
+                "key": "standard",
+                "label": "Standard",
+                "type": "melee",
+                "hands": 1,
+                "proficiency": "sword-shield",
+                "reach": ["M"],
+                "swing": {
+                    "ATN": 7,
+                    "DR": 1
+                },
+                "thrust": {
+                    "ATN": 7,
+                    "DR": 1
+                },
+                "blunt": {
+                    "ATN": 7,
+                    "DR": -1
+                },            
+                "DTN": 7
+            }
+        ]
+    },
+    {
+        "key": "hand-and-a-half-sword",
+        "label": "Hand-And-A-Half Sword",
+        "description": "An arming sword with a slightly longer blade and hilt long enough to accommodate both hands.",
+        "attacks": [
+            {
+                "key": "one-handed",
+                "label": "One-Handed",
+                "type": "melee",
+                "hands": 1,
+                "proficiency": ["longsword"],
+                "reach": ["L"],
+                "swing": {
+                    "ATN": 8,
+                    "DR": 2
+                },
+                "thrust": {
+                    "ATN": 8,
+                    "DR": 2
+                },
+                "blunt": {
+                    "ATN": 7,
+                    "DR": 0
+                },            
+                "DTN": 8
+            },
+            {
+                "key": "two-handed",
+                "label": "Two-Handed",
+                "type": "melee",
+                "hands": 2,
+                "proficiency": ["longsword"],
+                "reach": ["M"],
+                "swing": {
+                    "ATN": 7,
+                    "DR": 2
+                },
+                "thrust": {
+                    "ATN": 7,
+                    "DR": 2
+                },
+                "blunt": {
+                    "ATN": 7,
+                    "DR": 0
+                },            
+                "DTN": 6
+            }
+        ]
+    },
+    {
+        "key": "short-spear",
+        "label": "Short Spear",
+        "description": "A spear, as tall as its wielder or slightly shorter.",
+        "attacks": [
+            {
+                "key": "one-handed",
+                "label": "One-Handed",
+                "type": "melee",
+                "hands": 1,
+                "proficiency": ["spear-shield"],
+                "reach": ["M"],
+                "swing": {
+                    "ATN": 8,
+                    "DR": 0
+                },
+                "thrust": {
+                    "ATN": 7,
+                    "DR": 1
+                },
+                "blunt": {
+                    "ATN": 7,
+                    "DR": 0
+                },            
+                "DTN": 7
+            },
+            {
+                "key": "two-handed",
+                "label": "Two-Handed",
+                "type": "melee",
+                "hands": 2,
+                "proficiency": ["pole-arm", "spear-shield"],
+                "reach": ["M"],
+                "swing": {
+                    "ATN": null,
+                    "DR": null
+                },
+                "thrust": {
+                    "ATN": 6,
+                    "DR": 1
+                },
+                "blunt": {
+                    "ATN": 7,
+                    "DR": 0
+                },            
+                "DTN": 6
+            }
+        ]
+    }
+]

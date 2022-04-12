@@ -1,0 +1,23 @@
+[
+    {
+        "key": "longbow",
+        "label": "Longbow",
+        "description": "",
+        "BN": 5,
+        "attacks": [
+            {
+                "key": "standard",
+                "label": "Standard",
+                "type": "missile",
+                "hands": 2,
+                "proficiency": "bow",
+                "pointBlank": 0,
+                "near": 0,
+                "medium": 0,
+                "far": 0,
+                "extreme": 0,
+                "DR": 0
+            }
+        ]
+    }
+]

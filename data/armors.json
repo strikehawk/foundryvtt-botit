@@ -1,0 +1,27 @@
+[
+    {
+        "label": "Gambeson",
+        "part": "gambeson",
+        "material": "gambeson"
+    },
+    {
+        "label": "Short-sleeved Leather Jerkin",
+        "part": "short-sleeved-shirt",
+        "material": "leather"
+    },
+    {
+        "label": "Sleeveless Metal Scale Shirt",
+        "part": "sleeveless-shirt",
+        "material": "lamellar-metal"
+    },
+    {
+        "label": "Metal War Helm",
+        "part": "war-helm",
+        "material": "plate-early"
+    },
+    {
+        "label": "Hardened Leather War Helm",
+        "part": "war-helm",
+        "material": "hardened-leather"
+    }
+]

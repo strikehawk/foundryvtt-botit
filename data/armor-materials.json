@@ -1,0 +1,164 @@
+[
+    {
+        "key": "gambeson",
+        "label": "Gambeson",
+        "description": "<p>Pliable textile armor made of a number of layers of quilted cloth and stuffed with cotton, animal hair or other padding.</p><p>Many other types of armor require the wearing of a gambeson underneath to function properly, which is why the gambeson is also called an arming doublet.</p>",
+        "piercing": 1,
+        "blunt": 2,
+        "cleaving": 2,
+        "efficiency": 1
+    },
+    {
+        "key": "leather",
+        "label": "Leather",
+        "description": "<p>Tough, yet pliable, cured hide.</p>",
+        "piercing": 2,
+        "blunt": 1,
+        "cleaving": 2,
+        "efficiency": 2
+    },
+    {
+        "key": "leather-metal",
+        "label": "Leather with Metal",
+        "description": "<p>Pliable leather with short metal strips or rings sewn in strategic places to guard against cuts.</p>",
+        "piercing": 2,
+        "blunt": 1,
+        "cleaving": 3,
+        "efficiency": 3
+    },
+    {
+        "key": "hardened-leather",
+        "label": "Hardened Leather",
+        "description": "<p>Cured hide boiled and then dried to make it harder, at the cost of most of its pliability. It can be fashioned into segments large enough to serve as helmets and greaves, but not for workable breastplates.</p>",
+        "piercing": 3,
+        "blunt": 2,
+        "cleaving": 2,
+        "efficiency": 4
+    },
+    {
+        "key": "lamellar-leather",
+        "label": "Leather / Horn Scale / Lamellar",
+        "description": "<p>Armor fashioned from strips of either hardened leather or animal bone.</p><p>For scale armor, the strips are sewn onto a backing of soft leather or heavy canvas, and then overlapped like roofing tiles.</p><p>For lamellar armor, each strip has holes fashioned into its edges and are then bound together and overlapped by two neighbouring pieces while yet again overlapping others.</p><p>Lamellar is therefore quite rigid, while scale is minimally pliable. Still, neither can be used to protect a joint, and both require the wearing of a gambeson underneath.</p>",
+        "piercing": 3,
+        "blunt": 3,
+        "cleaving": 3,
+        "efficiency": 5
+    },
+    {
+        "key": "lamellar-leather-no-gambeson",
+        "label": "Leather / Horn Scale / Lamellar (without Gambeson)",
+        "description": "<p>Armor fashioned from strips of either hardened leather or animal bone.</p><p>For scale armor, the strips are sewn onto a backing of soft leather or heavy canvas, and then overlapped like roofing tiles.</p><p>For lamellar armor, each strip has holes fashioned into its edges and are then bound together and overlapped by two neighbouring pieces while yet again overlapping others.</p><p>Lamellar is therefore quite rigid, while scale is minimally pliable. This part is worn without a gambeson.</p>",
+        "piercing": 2,
+        "blunt": 2,
+        "cleaving": 2,
+        "efficiency": 5
+    },
+    {
+        "key": "lamellar-metal",
+        "label": "Metal Scale / Lamellar",
+        "description": "<p>Armor fashioned from strips of metal.</p><p>For scale armor, the strips are sewn onto a backing of soft leather or heavy canvas, and then overlapped like roofing tiles.</p><p>For lamellar armor, each strip has holes fashioned into its edges and are then bound together and overlapped by two neighbouring pieces while yet again overlapping others.</p><p>Lamellar is therefore quite rigid, while scale is minimally pliable. Still, neither can be used to protect a joint, and both require the wearing of a gambeson underneath.</p>",
+        "piercing": 4,
+        "blunt": 4,
+        "cleaving": null,
+        "efficiency": 5
+    },
+    {
+        "key": "lamellar-metal-no-gambeson",
+        "label": "Metal Scale / Lamellar (without Gambeson)",
+        "description": "<p>Armor fashioned from strips of metal.</p><p>For scale armor, the strips are sewn onto a backing of soft leather or heavy canvas, and then overlapped like roofing tiles.</p><p>For lamellar armor, each strip has holes fashioned into its edges and are then bound together and overlapped by two neighbouring pieces while yet again overlapping others.</p><p>Lamellar is therefore quite rigid, while scale is minimally pliable. This part is worn without a gambeson.</p>",
+        "piercing": 2,
+        "blunt": 2,
+        "cleaving": null,
+        "efficiency": 5
+    },
+    {
+        "key": "brigandine",
+        "label": "Brigandine",
+        "description": "<p>Armor made of palm-sized to hand-sized metal plates, each sandwiched between two layers of heavy canvas or soft leather and riveted together to stay in place, also known as Coat of Plates.</p><p>Brigandine is quite rigid and cannot be used to protect joints, and requires the wearing of a gambeson underneath. Brigandine AVs can also be used for Imperial Roman legionaries&rsquo; segmented armor.</p>",
+        "piercing": 4,
+        "blunt": 4,
+        "cleaving": null,
+        "efficiency": 6
+    },
+    {
+        "key": "brigandine-no-gambeson",
+        "label": "Brigandine (without Gambeson)",
+        "description": "<p>Armor made of palm-sized to hand-sized metal plates, each sandwiched between two layers of heavy canvas or soft leather and riveted together to stay in place, also known as Coat of Plates.</p><p>Brigandine is quite rigid and cannot be used to protect joints, and requires the wearing of a gambeson underneath. Brigandine AVs can also be used for Imperial Roman legionaries&rsquo; segmented armor. This part is worn without gambeson.</p>",
+        "piercing": 2,
+        "blunt": 2,
+        "cleaving": null,
+        "efficiency": 6
+    },
+    {
+        "key": "maille",
+        "label": "Maille",
+        "description": "<p>Also known as chainmail, this armor consists of a mesh of small metal rings, each interlinked with neighbouring rings. It is supremely pliable and can therefore be used to protect joints, but it, too, is dependent on a gambeson being worn underneath.</p>",
+        "piercing": 4,
+        "blunt": 3,
+        "cleaving": null,
+        "efficiency": 7
+    },
+    {
+        "key": "maille-no-gambeson",
+        "label": "Maille (without Gambeson)",
+        "description": "<p>Also known as chainmail, this armor consists of a mesh of small metal rings, each interlinked with neighbouring rings. It is supremely pliable and can therefore be used to protect joints. This part is worn without gambeson.</p>",
+        "piercing": 2,
+        "blunt": 2,
+        "cleaving": null,
+        "efficiency": 7
+    },
+    {
+        "key": "brigandine-over-maille",
+        "label": "Brigandine over Maille",
+        "description": "<p>A special blend of layering armors, this was common during the transitional period from maille to plate, and consists of maille with additional brigandine worn over it to protect the torso from shoulder to hip.</p>",
+        "piercing": 5,
+        "blunt": 3,
+        "cleaving": null,
+        "efficiency": 8
+    },
+    {
+        "key": "brigandine-over-maille-no-gambeson",
+        "label": "Brigandine over Maille (without Gambeson)",
+        "description": "<p>A special blend of layering armors, this was common during the transitional period from maille to plate, and consists of maille with additional brigandine worn over it to protect the torso from shoulder to hip. This part is worn without gambeson.</p>",
+        "piercing": 3,
+        "blunt": 2,
+        "cleaving": null,
+        "efficiency": 8
+    },
+    {
+        "key": "plate-early",
+        "label": "Plate (Early)",
+        "description": "<p>Metal plates shaped to encase the body, including helmets. Two AVs are provided for it.</p><p>The lesser value is to be used for all plate armor pieces until the arrival of full articulated suits of plate.</p><p>Once such suits become available, the second, higher value is used to reflect the thicker plate now protecting the head and torso, and the lesser value is now reserved for the lighter plate protecting the limbs.</p><p>Plate armor requires the wearing of a gambeson, which along with an articulated suit of plate may also have insets of maille.</p>",
+        "piercing": 6,
+        "blunt": 4,
+        "cleaving": null,
+        "efficiency": 9
+    },
+    {
+        "key": "plate-early-no-gambeson",
+        "label": "Plate (Early, without Gambeson)",
+        "description": "<p>Metal plates shaped to encase the body, including helmets. Two AVs are provided for it.</p><p>The lesser value is to be used for all plate armor pieces until the arrival of full articulated suits of plate.</p><p>Once such suits become available, the second, higher value is used to reflect the thicker plate now protecting the head and torso, and the lesser value is now reserved for the lighter plate protecting the limbs.</p><p>This part is worn without gambeson.</p>",
+        "piercing": 3,
+        "blunt": 2,
+        "cleaving": null,
+        "efficiency": 9
+    },
+    {
+        "key": "plate-latest",
+        "label": "Plate (Latest)",
+        "description": "<p>Metal plates shaped to encase the body, including helmets. Two AVs are provided for it.</p><p>The lesser value is to be used for all plate armor pieces until the arrival of full articulated suits of plate.</p><p>Once such suits become available, the second, higher value is used to reflect the thicker plate now protecting the head and torso, and the lesser value is now reserved for the lighter plate protecting the limbs.</p><p>Plate armor requires the wearing of a gambeson, which along with an articulated suit of plate may also have insets of maille.</p>",
+        "piercing": 7,
+        "blunt": 5,
+        "cleaving": null,
+        "efficiency": 9
+    },
+    {
+        "key": "plate-latest-no-gambeson",
+        "label": "Plate (Latest, without Gambeson)",
+        "description": "<p>Metal plates shaped to encase the body, including helmets. Two AVs are provided for it.</p><p>The lesser value is to be used for all plate armor pieces until the arrival of full articulated suits of plate.</p><p>Once such suits become available, the second, higher value is used to reflect the thicker plate now protecting the head and torso, and the lesser value is now reserved for the lighter plate protecting the limbs.</p><p>This part is worn without gambeson.</p>",
+        "piercing": 4,
+        "blunt": 3,
+        "cleaving": null,
+        "efficiency": 9
+    }
+]

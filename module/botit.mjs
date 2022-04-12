@@ -59,6 +59,7 @@ Hooks.once('init', async function () {
 Hooks.once('ready', async function () {
   // _createSkills();
   // _createProficiencies();
+  _createArmors();
 });
 
 async function _createSkills() {
@@ -116,6 +117,36 @@ async function _createProficiencies() {
     };
 
     data.data.ranged = !!data.data.ranged;
+  
+    item = await Item.create(data);
+  }
+}
+
+async function _createArmors() {
+  let folder = game.folders.find(f => f.type === "Item" && f.name === "Armors");
+  if (!folder) {
+    folder = await Folder.create({ name: "Armors", type: "Item" });
+  }
+
+  for (const i of game.items) {
+    if (i.type !== "armor") {
+      continue;
+    }
+
+    i.delete();
+  }
+
+  let item;
+  let data;
+  for (const armor of Object.values(BOTIT.armors)) {
+    data = { 
+      name: armor.label, 
+      type: "armor",
+      folder: folder.id, 
+      data: foundry.utils.deepClone(armor) 
+    };
+
+    data.data.equipped = false;
   
     item = await Item.create(data);
   }

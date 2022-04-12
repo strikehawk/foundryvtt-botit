@@ -1,49 +1,12 @@
 import attributesData from "../../data/attributes.json" assert { type: "json" };
 import skillsData from "../../data/skills.json" assert { type: "json" };
 import proficienciesData from "../../data/proficiencies.json" assert { type: "json" };
+import bodyLocationsData from "../../data/body-locations.json" assert { type: "json" };
+import armorPartsData from "../../data/armor-parts.json" assert { type: "json" };
+import armorMaterialsData from "../../data/armor-materials.json" assert { type: "json" };
+import armorsData from "../../data/armors.json" assert { type: "json" };
 
 import { TalentsConfig } from "./talents-config.mjs";
-
-
-// BOTIT.valueTypes = {
-//   NUMERICAL: "numerical",
-//   ROLL_EXPRESSION: "roll-expression",
-// }
-
-// const systemValues = [
-//   { id: "resources.hp.max", label: "Points de Vitalité (max)" },
-//   { id: "resources.wounds.max", label: "Blessures (max)" },
-//   { id: "damageBonus.melee", label: "Bonus aux Dégâts (Corps à corps)", type: BOTIT.valueTypes.ROLL_EXPRESSION },
-//   { id: "damageBonus.ranged", label: "Bonus aux Dégâts (Distance)", type: BOTIT.valueTypes.ROLL_EXPRESSION },
-//   { id: "skills.acrobatie", label: "Acrobatie" },
-//   { id: "skills.athletisme", label: "Athlétisme" },
-//   { id: "skills.autorite", label: "Autorité" },
-//   { id: "skills.combat-cac", label: "Combat (Corps à corps)" },
-//   { id: "skills.combat-distance", label: "Combat (Distance)" },
-//   { id: "skills.connaissance", label: "Connaissance" },
-//   { id: "skills.defense", label: "Défense" },
-//   { id: "skills.discretion", label: "Discrétion" },
-//   { id: "skills.documentation", label: "Documentation" },
-//   { id: "skills.eloquence", label: "Eloquence" },
-//   { id: "skills.equitation", label: "Equitation" },
-//   { id: "skills.intellect", label: "Intellect" },
-//   { id: "skills.langue", label: "Langue" },
-//   { id: "skills.muscles", label: "Muscles" },
-//   { id: "skills.perception", label: "Perception" },
-//   { id: "skills.pilotage", label: "Pilotage" },
-//   { id: "skills.psychologie", label: "Psychologie" },
-//   { id: "skills.reflexes", label: "Réflexes" },
-//   { id: "skills.resistance", label: "Résistance" },
-//   { id: "skills.soins", label: "Soins" },
-//   { id: "skills.survie", label: "Survie" },
-//   { id: "skills.technique", label: "Technique" },
-//   { id: "skills.volonte", label: "Volonté" },
-// ];
-
-// BOTIT.values = new Map();
-// for (const v of systemValues) {
-//   BOTIT.values.set(v.id, v);
-// }
 
 export class Attribute {
   /**
@@ -114,45 +77,197 @@ export class Skill {
 }
 
 export class Proficiency {
-    /**
-   * @property The unique identifier of the proficiency.
+  /**
+ * @property The unique identifier of the proficiency.
+ * 
+ * @type {string}
+ * @memberof Proficiency
+ */
+  key;
+
+  /**
+   * @property The label of the proficiency.
    * 
    * @type {string}
    * @memberof Proficiency
    */
-     key;
+  label;
 
-     /**
-      * @property The label of the proficiency.
-      * 
-      * @type {string}
-      * @memberof Proficiency
-      */
-     label;
-   
-     /**
-      * @property The description of the proficiency.
-      * 
-      * @type {string}
-      * @memberof Proficiency
-      */
-     description;
-   
-     /**
-      * @property True if the proficiency uses a ranged weapon; false otherwise.
-      * 
-      * @type {boolean}
-      * @memberof Proficiency
-      */
-     ranged;
+  /**
+   * @property The description of the proficiency.
+   * 
+   * @type {string}
+   * @memberof Proficiency
+   */
+  description;
 
-     /**
-      * @property The default value of the proficiency based on other proficiencies.
-      * 
-      * @type {Object.<string, number>}
-      * @memberof Proficiency
-      */
-     defaults;
+  /**
+   * @property True if the proficiency uses a ranged weapon; false otherwise.
+   * 
+   * @type {boolean}
+   * @memberof Proficiency
+   */
+  ranged;
+
+  /**
+   * @property The default value of the proficiency based on other proficiencies.
+   * 
+   * @type {Object.<string, number>}
+   * @memberof Proficiency
+   */
+  defaults;
+}
+
+export class BodyLocation {
+  /**
+  * @property The unique identifier of the BodyLocation.
+  * 
+  * @type {string}
+  * @memberof BodyLocation
+  */
+  key;
+
+  /**
+   * @property The label of the BodyLocation.
+   * 
+   * @type {string}
+   * @memberof BodyLocation
+   */
+  label;
+
+  /**
+   * @property The side of the location, 'left' or 'right'.
+   * 
+   * @type {string}
+   * @memberof BodyLocation
+   */
+  side;
+}
+
+export class ArmorType {
+  /**
+  * @property The unique identifier of the ArmorType.
+  * 
+  * @type {string}
+  * @memberof ArmorType
+  */
+  key;
+
+  /**
+   * @property The label of the ArmorType.
+   * 
+   * @type {string}
+   * @memberof ArmorType
+   */
+  label;
+
+  /**
+   * @property The description of the ArmorType.
+   * 
+   * @type {string}
+   * @memberof ArmorType
+   */
+  description;
+
+  /**
+   * @property The list of BodyLocation keys protected by this ArmorType.
+   * 
+   * @type {string[]}
+   * @memberof ArmorType
+   */
+  zones;
+}
+
+export class ArmorMaterial {
+  /**
+  * @property The unique identifier of the ArmorMaterial.
+  * 
+  * @type {string}
+  * @memberof ArmorMaterial
+  */
+  key;
+
+  /**
+   * @property The label of the ArmorMaterial.
+   * 
+   * @type {string}
+   * @memberof ArmorMaterial
+   */
+  label;
+
+  /**
+   * @property The description of the ArmorMaterial.
+   * 
+   * @type {string}
+   * @memberof ArmorMaterial
+   */
+  description;
+
+  /**
+   * @property The protection offered by this ArmorMaterial against Piercing damage.
+   * 
+   * @type {number}
+   * @memberof ArmorMaterial
+   */
+  piercing;
+
+  /**
+   * @property The protection offered by this ArmorMaterial against Blunt damage.
+   * 
+   * @type {number}
+   * @memberof ArmorMaterial
+   */
+  blunt;
+
+  /**
+   * @property The protection offered by this ArmorMaterial against Cleaving damage. If null, no Cleaving damage can be sustained when protected by this armor material.
+   * 
+   * @type {number}
+   * @memberof ArmorMaterial
+   */
+  cleaving;
+
+  /**
+   * @property An abstraction of the efficiency level of this armor material.
+   * 
+   * @type {number}
+   * @memberof ArmorMaterial
+   */
+  efficiency;
+}
+
+export class Armor {
+  /**
+   * @property The label of the Armor.
+   * 
+   * @type {string}
+   * @memberof Armor
+   */
+  label;
+
+  /**
+   * @property The description of the Armor.
+   * 
+   * @type {string}
+   * @memberof Armor
+   */
+  description;
+
+  /**
+   * @property The shape of the armor (the `key` of an Armor Part).
+   * 
+   * @type {string}
+   * @memberof Armor
+   */
+  part;
+
+  /**
+   * @property The material of the armor (the `key` of an Armor Material).
+   * 
+   * @type {string}
+   * @memberof Armor
+   */
+  material;
 }
 
 export class BotitSettings {
@@ -172,7 +287,7 @@ export class BotitSettings {
    * @type {Object.<string, Attribute>}
    * @memberof BotitSettings
    */
-   get attributes() {
+  get attributes() {
     return this._attributes;
   }
 
@@ -197,13 +312,53 @@ export class BotitSettings {
   }
 
   /**
-   * @property The set of Talents used within the system.
+   * @property The set of Proficiencies.
    * 
    * @type {Object.<string, Proficiency>}
    * @memberof BotitSettings
    */
-   get proficiencies() {
+  get proficiencies() {
     return this._proficiencies;
+  }
+
+  /**
+   * @property The set of BodyLocations.
+   * 
+   * @type {Object.<string, BodyLocation>}
+   * @memberof BotitSettings
+   */
+  get bodyLocations() {
+    return this._bodyLocations;
+  }
+
+  /**
+   * @property The set of ArmorParts.
+   * 
+   * @type {Object.<string, ArmorType>}
+   * @memberof BotitSettings
+   */
+  get armorParts() {
+    return this._armorParts;
+  }
+
+  /**
+   * @property The set of ArmorMaterials.
+   * 
+   * @type {Object.<string, ArmorMaterial>}
+   * @memberof BotitSettings
+   */
+  get armorMaterials() {
+    return this._armorMaterials;
+  }
+
+  /**
+   * @property The set of Armors.
+   * 
+   * @type {Object.<string, Armor>}
+   * @memberof BotitSettings
+   */
+   get armors() {
+    return this._armors;
   }
 
   /**
@@ -214,11 +369,31 @@ export class BotitSettings {
    */
   values;
 
+  /**
+   * @property The possible damage types in the game system.
+   * 
+   * @type {Object.<string, string>}
+   * @memberof BotitSettings
+   */
+  get damageTypes() {
+    return this._damageTypes;
+  }
+
   constructor() {
     this._attributes = this._loadAttributes();
     this._skills = this._loadSkills();
     this._talents = new TalentsConfig();
     this._proficiencies = this._loadProficiencies();
+    this._bodyLocations = this._loadBodyLocations();
+    this._armorParts = this._loadArmorParts();
+    this._armorMaterials = this._loadArmorMaterials();
+    this._armors = this._loadArmors();
+
+    this._damageTypes = {
+      PIERCING: "piercing",
+      BLUNT: "blunt",
+      CLEAVING: "cleaving"
+    };
   }
 
   _loadAttributes() {
@@ -240,7 +415,7 @@ export class BotitSettings {
 
     return skills;
   }
-  
+
   _loadProficiencies() {
     const proficiencies = {};
 
@@ -249,6 +424,46 @@ export class BotitSettings {
     }
 
     return proficiencies;
+  }
+
+  _loadBodyLocations() {
+    const bodyLocations = {};
+
+    for (const loc of bodyLocationsData) {
+      bodyLocations[loc.key] = loc;
+    }
+
+    return bodyLocations;
+  }
+
+  _loadArmorParts() {
+    const armorParts = {};
+
+    for (const type of armorPartsData) {
+      armorParts[type.key] = type;
+    }
+
+    return armorParts;
+  }
+
+  _loadArmorMaterials() {
+    const armorMaterials = {};
+
+    for (const material of armorMaterialsData) {
+      armorMaterials[material.key] = material;
+    }
+
+    return armorMaterials;
+  }
+
+  _loadArmors() {
+    const armors = {};
+
+    for (const armor of armorsData) {
+      armors[armor.label] = armor;
+    }
+
+    return armors;
   }
 }
 

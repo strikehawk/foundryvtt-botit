@@ -1,0 +1,21 @@
+{
+  "name": "Acting",
+  "type": "skill",
+  "img": "icons/svg/item-bag.svg",
+  "data": {
+    "key": "acting",
+    "label": "Acting",
+    "description": "<div>The character is skilled in all aspects of stage acting in front of crowds. Memorizing lines, voice projection, body control and voice mimicry are all within the range of the normal use of this Skill. A character may be required to make Checks when putting on an important show; in front of an important crowd; or if required to speak especially difficult lines. The character can accurately mimic the voice of any given individual that he has heard speak at least once. Without the Disguise Skill, this can be useful when shouting or speaking to another person from behind a door or while otherwise out of sight. When combined with Disguise, Acting can be used to play the part of a specific person. In these cases, only the worse of the two Skills is checked during the interaction, not both.</div>",
+    "attribute": "heart",
+    "img": "icons/svg/item-bag.svg"
+  },
+  "effects": [],
+  "flags": {
+    "exportSource": {
+      "world": "blade-of-the-iron-throne",
+      "system": "blade-iron-throne",
+      "coreVersion": "9.238",
+      "systemVersion": "1.0.0"
+    }
+  }
+}

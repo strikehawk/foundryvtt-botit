@@ -70,13 +70,29 @@
     "Item": {
         "types": [
             "skill",
-            "proficiency"
+            "proficiency",
+            "shield",
+            "armor",
+            "weapon-attack",
+            "missile-weapon-attack",
+            "bow-attack"
         ],
         "templates": {
             "genericItem": {
                 "key": "",
                 "label": "",
                 "description": ""
+            },
+            "weapon-attack": {
+                "proficiency": [""]
+            },
+            "missile-weapon-attack": {
+                "pointBlank": 0,
+                "near": 0,
+                "medium": 0,
+                "far": 0,
+                "extreme": 0,
+                "DR": 0
             },
             "basicValue": {
                 "id": "",
@@ -103,6 +119,59 @@
             ],
             "ranged": false,
             "defaults": {}
+        },
+        "weapon": {
+            "templates": [
+                "genericItem"
+            ],
+            "attacks": [""]
+        },
+        "weapon-attack": {
+            "templates": [
+                "genericItem",
+                "weapon-attack"
+            ],
+            "reach": [],
+            "swing": {
+                "ATN": 7,
+                "DR": 0
+            },
+            "thrust": {
+                "ATN": 7,
+                "DR": 0
+            },
+            "blunt": {
+                "ATN": 7,
+                "DR": 0
+            },            
+            "DTN": 7
+        },
+        "missile-weapon-attack": {
+            "templates": [
+                "genericItem",
+                "weapon-attack",
+                "missile-weapon-attack"
+            ]
+        },
+        "bow-attack": {
+            "templates": [
+                "genericItem",
+                "weapon-attack",
+                "missile-weapon-attack"
+            ],
+            "BN": 4
+        },
+        "shield": {
+            "description": "",
+            "melee": 7,
+            "thrown": 7,
+            "projectile": 7
+        },
+        "armor": {
+            "description": "",
+            "part": "",
+            "material": "",
+            "equipped"
         }
     }
 }

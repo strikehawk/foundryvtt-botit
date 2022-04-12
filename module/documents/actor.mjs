@@ -1,4 +1,5 @@
 import { BOTIT } from "../helpers/config.mjs";
+import { ActorArmorManager } from "./actor-armor.manager.mjs";
 
 /**
  * Extend the base Actor document by defining a custom roll data structure which is ideal for the Simple system.
@@ -19,6 +20,13 @@ export class BotitActor extends Actor {
   prepareBaseData() {
     // Data modifications in this step occur before processing embedded
     // documents or derived data.
+  }
+
+  /** @override */
+  prepareEmbeddedDocuments() {
+    super.prepareEmbeddedDocuments();
+
+    this.data.data.armorSet = ActorArmorManager.getArmorSet(this);
   }
 
   /**

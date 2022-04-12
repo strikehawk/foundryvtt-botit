@@ -13,13 +13,7 @@ export const preloadHandlebarsTemplates = async function () {
     `systems/${BOTIT.systemFolder}/templates/actor/parts/actor-skills.html`,
     `systems/${BOTIT.systemFolder}/templates/actor/parts/actor-proficiencies.html`,
     `systems/${BOTIT.systemFolder}/templates/actor/parts/actor-blank.html`,
-    // `systems/${BOTIT.systemFolder}/templates/actor/parts/actor-talents.html`,
-    // `systems/${BOTIT.systemFolder}/templates/actor/parts/actor-profile.html`,
-    // `systems/${BOTIT.systemFolder}/templates/actor/parts/actor-skill-form.html`,
-    // `systems/${BOTIT.systemFolder}/templates/actor/parts/actor-hero-sheet-full.html`,
-
-    // // Item partials
-    // `systems/${BOTIT.systemFolder}/templates/item/parts/item-profile-skills.html`,
-    // `systems/${BOTIT.systemFolder}/templates/item/parts/item-profile-features.html`,
+    `systems/${BOTIT.systemFolder}/templates/actor/parts/actor-gear.html`,
+    `systems/${BOTIT.systemFolder}/templates/actor/parts/actor-silhouette.html`,
   ]);
 };
