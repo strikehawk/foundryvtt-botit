@@ -47,7 +47,7 @@
         "label": "Aim",
         "abbreviation": "",
         "combined": true,
-        "description": "Aim, extracted from Sagacity and Cunning, quantifies one’s natural ability to hit a target over distances."
+        "description": "Aim, extracted from Sagacity and Cunning, quantifies one's natural ability to hit a target over distances."
     },
     {
         "key": "knockdown",

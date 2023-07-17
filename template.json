@@ -54,6 +54,11 @@
                     "assets": "f",
                     "proficiencies": "f"
                 }
+            },
+            "wounds": {
+                "wounds": {
+                    
+                }
             }
         },
         "hero": {
@@ -172,6 +177,14 @@
             "part": "",
             "material": "",
             "equipped"
+        },
+        "wound": {
+            "level": 1,
+            "bl": 0,
+            "shock": 0,
+            "pain": 0,
+            "kd": 0,
+            "ko": 0
         }
     }
 }

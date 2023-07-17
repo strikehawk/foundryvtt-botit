@@ -1,0 +1,23 @@
+.location {
+    fill: #fff;
+    stroke: #000;
+    stroke-width: 0.6px;
+    r: 1.5px;
+}
+
+.location:hover {
+    r: 1.8px;
+}
+
+.location.selected {
+    stroke-width: 1.2px;
+    r: 3px;
+}
+
+.location.selected:hover {
+    r: 3.6px;
+}
+
+.location.wound {
+   stroke: #c83737ff;
+}
