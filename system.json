@@ -2,10 +2,18 @@
     "name": "blade-iron-throne",
     "title": "Blade of the Iron Throne",
     "description": "Blade of the Iron Throne game system for Foundry VTT",
-    "version": "1.0.0",
-    "templateVersion": 2,
-    "author": "Strikehawk",
-    "minimumCoreVersion": "0.8.3",
+    "version": "1.0.1",
+    "authors": [
+      {
+        "name": "Strikehawk",
+        "url": "https://foundryvtt.com"
+      }
+    ],
+    "compatibility": {
+      "minimum": "8.9",
+      "verified": "10.288",
+      "maximum": "10"
+    },
     "esmodules": [
       "module/botit.mjs"
     ],

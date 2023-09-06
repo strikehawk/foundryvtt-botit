@@ -23,7 +23,7 @@ export class BotitActorSheet extends ActorSheet {
 
   /** @override */
   get template() {
-    return `systems/${BOTIT.systemFolder}/templates/actor/actor-${this.actor.data.type}-sheet.html`;
+    return `systems/${BOTIT.systemFolder}/templates/actor/actor-${this.actor.type}-sheet.html`;
   }
 
   /** @type {ItemManagerBase[]} */
@@ -39,15 +39,12 @@ export class BotitActorSheet extends ActorSheet {
     // editable, the items array, and the effects array.
     const context = super.getData();
 
-    // Use a safe clone of the actor data for further operations.
-    const actorData = context.actor.data;
-
     // Add the actor's data to context.data for easier access, as well as flags.
-    context.data = actorData.data;
-    context.flags = actorData.flags;
+    context.data = context.actor.system;
+    context.flags =  context.actor.flags;
 
     // Prepare Hero data and items.
-    if (actorData.type == 'hero') {
+    if (context.actor.type == 'hero') {
       this._itemManagers = this._getItemManagers(context);
 
       this._prepareItems(context);
@@ -385,7 +382,7 @@ export class BotitActorSheet extends ActorSheet {
 
   async _updateObject(event, formData) {
     // Remove proficiencies if value equals to defaulted one
-    const defaultedProficiencies = this.actor.data.data.defaultedProficiencies;
+    const defaultedProficiencies = this.actor.system.defaultedProficiencies;
 
     let key;
     let formValue;

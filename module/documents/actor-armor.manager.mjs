@@ -66,7 +66,7 @@ export class ActorArmorManager {
                 continue;
             }
 
-            armorData = i.data.data;
+            armorData = i.system;
 
             armorPart = null;
             armorMaterial = null;
@@ -100,13 +100,13 @@ export class ActorArmorManager {
 
                 if (armorMaterial.efficiency > bodyLocation.efficiency) {
                     // New "best" material. Should first armor piece in the array
-                    bodyLocation.armorPieces.splice(0, 0, i.data.data);
+                    bodyLocation.armorPieces.splice(0, 0, i.system);
                     bodyLocation.efficiency = armorMaterial.efficiency;
                     bodyLocation.piercing = armorMaterial.piercing;
                     bodyLocation.blunt = armorMaterial.blunt;
                     bodyLocation.cleaving = armorMaterial.cleaving;
                 } else {
-                    bodyLocation.armorPieces.push(i.data.data);
+                    bodyLocation.armorPieces.push(i.system);
                 }
             }
         }

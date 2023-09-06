@@ -93,5 +93,4 @@ function setEntityImage(entityData) {
 
   const prevImg = entityData.img;
   entityData.img = !prevImg || prevImg === DEFAULT_ITEM_IMAGE ? url : prevImg;
-  entityData.data.img = !prevImg || prevImg === DEFAULT_ITEM_IMAGE ? url : prevImg;
 }

@@ -176,7 +176,7 @@
             "description": "",
             "part": "",
             "material": "",
-            "equipped"
+            "equipped": false
         },
         "wound": {
             "level": 1,

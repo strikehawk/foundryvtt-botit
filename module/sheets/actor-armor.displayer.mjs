@@ -8,7 +8,7 @@ export class ActorArmorDisplayer {
     }
 
     _displayArmor(html) {
-        const armorSet = this._actor.data.data.armorSet;
+        const armorSet = this._actor.system.armorSet;
         if (!armorSet) {
             return;
         }
