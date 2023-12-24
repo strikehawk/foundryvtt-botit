@@ -1,274 +1,21 @@
+/** @typedef {import("@league-of-foundry-developers/foundry-vtt-types")} */
+/** @typedef {import("../model/armors.mjs").Armor} Armor */
+/** @typedef {import("../model/armors.mjs").ArmorType} ArmorType */
+/** @typedef {import("../model/armors.mjs").ArmorMaterial} ArmorMaterial */
+/** @typedef {import("../model/attributes.mjs").Attribute} Attribute */
+/** @typedef {import("../model/body-locations.mjs").BodyLocation} BodyLocation */
+/** @typedef {import("../model/body-locations.mjs").BodyZone} BodyZone */
+/** @typedef {import("../model/proficiencies.mjs").Proficiency} Proficiency */
+/** @typedef {import("../model/skills.mjs").Skill} Skill */
+
 import attributesData from "../../data/attributes.json" assert { type: "json" };
 import skillsData from "../../data/skills.json" assert { type: "json" };
 import proficienciesData from "../../data/proficiencies.json" assert { type: "json" };
-import bodyLocationsData from "../../data/body-locations.json" assert { type: "json" };
 import armorPartsData from "../../data/armor-parts.json" assert { type: "json" };
 import armorMaterialsData from "../../data/armor-materials.json" assert { type: "json" };
 import armorsData from "../../data/armors.json" assert { type: "json" };
 
 import { TalentsConfig } from "./talents-config.mjs";
-
-export class Attribute {
-  /**
-   * @property The unique identifier of the attribute.
-   * 
-   * @type {string}
-   * @memberof Attribute
-   */
-  key;
-
-  /**
-   * @property The label of the attribute.
-   * 
-   * @type {string}
-   * @memberof Attribute
-   */
-  label;
-
-  /**
-   * @property The short name of the attribute.
-   * 
-   * @type {string}
-   * @memberof Attribute
-   */
-  abbreviation;
-
-  /**
-   * @property The description of the attribute.
-   * 
-   * @type {string}
-   * @memberof Attribute
-   */
-  description;
-}
-
-export class Skill {
-  /**
-   * @property The unique identifier of the skill.
-   * 
-   * @type {string}
-   * @memberof Skill
-   */
-  key;
-
-  /**
-   * @property The label of the skill.
-   * 
-   * @type {string}
-   * @memberof Skill
-   */
-  label;
-
-  /**
-   * @property The attribute mainly used with this skill.
-   * 
-   * @type {string}
-   * @memberof Skill
-   */
-  attribute;
-
-  /**
-   * @property The description of the skill.
-   * 
-   * @type {string}
-   * @memberof Skill
-   */
-  description;
-}
-
-export class Proficiency {
-  /**
- * @property The unique identifier of the proficiency.
- * 
- * @type {string}
- * @memberof Proficiency
- */
-  key;
-
-  /**
-   * @property The label of the proficiency.
-   * 
-   * @type {string}
-   * @memberof Proficiency
-   */
-  label;
-
-  /**
-   * @property The description of the proficiency.
-   * 
-   * @type {string}
-   * @memberof Proficiency
-   */
-  description;
-
-  /**
-   * @property True if the proficiency uses a ranged weapon; false otherwise.
-   * 
-   * @type {boolean}
-   * @memberof Proficiency
-   */
-  ranged;
-
-  /**
-   * @property The default value of the proficiency based on other proficiencies.
-   * 
-   * @type {Object.<string, number>}
-   * @memberof Proficiency
-   */
-  defaults;
-}
-
-export class BodyLocation {
-  /**
-  * @property The unique identifier of the BodyLocation.
-  * 
-  * @type {string}
-  * @memberof BodyLocation
-  */
-  key;
-
-  /**
-   * @property The label of the BodyLocation.
-   * 
-   * @type {string}
-   * @memberof BodyLocation
-   */
-  label;
-
-  /**
-   * @property The side of the location, 'left' or 'right'.
-   * 
-   * @type {string}
-   * @memberof BodyLocation
-   */
-  side;
-}
-
-export class ArmorType {
-  /**
-  * @property The unique identifier of the ArmorType.
-  * 
-  * @type {string}
-  * @memberof ArmorType
-  */
-  key;
-
-  /**
-   * @property The label of the ArmorType.
-   * 
-   * @type {string}
-   * @memberof ArmorType
-   */
-  label;
-
-  /**
-   * @property The description of the ArmorType.
-   * 
-   * @type {string}
-   * @memberof ArmorType
-   */
-  description;
-
-  /**
-   * @property The list of BodyLocation keys protected by this ArmorType.
-   * 
-   * @type {string[]}
-   * @memberof ArmorType
-   */
-  zones;
-}
-
-export class ArmorMaterial {
-  /**
-  * @property The unique identifier of the ArmorMaterial.
-  * 
-  * @type {string}
-  * @memberof ArmorMaterial
-  */
-  key;
-
-  /**
-   * @property The label of the ArmorMaterial.
-   * 
-   * @type {string}
-   * @memberof ArmorMaterial
-   */
-  label;
-
-  /**
-   * @property The description of the ArmorMaterial.
-   * 
-   * @type {string}
-   * @memberof ArmorMaterial
-   */
-  description;
-
-  /**
-   * @property The protection offered by this ArmorMaterial against Piercing damage.
-   * 
-   * @type {number}
-   * @memberof ArmorMaterial
-   */
-  piercing;
-
-  /**
-   * @property The protection offered by this ArmorMaterial against Blunt damage.
-   * 
-   * @type {number}
-   * @memberof ArmorMaterial
-   */
-  blunt;
-
-  /**
-   * @property The protection offered by this ArmorMaterial against Cleaving damage. If null, no Cleaving damage can be sustained when protected by this armor material.
-   * 
-   * @type {number}
-   * @memberof ArmorMaterial
-   */
-  cleaving;
-
-  /**
-   * @property An abstraction of the efficiency level of this armor material.
-   * 
-   * @type {number}
-   * @memberof ArmorMaterial
-   */
-  efficiency;
-}
-
-export class Armor {
-  /**
-   * @property The label of the Armor.
-   * 
-   * @type {string}
-   * @memberof Armor
-   */
-  label;
-
-  /**
-   * @property The description of the Armor.
-   * 
-   * @type {string}
-   * @memberof Armor
-   */
-  description;
-
-  /**
-   * @property The shape of the armor (the `key` of an Armor Part).
-   * 
-   * @type {string}
-   * @memberof Armor
-   */
-  part;
-
-  /**
-   * @property The material of the armor (the `key` of an Armor Material).
-   * 
-   * @type {string}
-   * @memberof Armor
-   */
-  material;
-}
 
 export class BotitSettings {
   /**
@@ -322,16 +69,6 @@ export class BotitSettings {
   }
 
   /**
-   * @property The set of BodyLocations.
-   * 
-   * @type {Object.<string, BodyLocation>}
-   * @memberof BotitSettings
-   */
-  get bodyLocations() {
-    return this._bodyLocations;
-  }
-
-  /**
    * @property The set of ArmorParts.
    * 
    * @type {Object.<string, ArmorType>}
@@ -357,7 +94,7 @@ export class BotitSettings {
    * @type {Object.<string, Armor>}
    * @memberof BotitSettings
    */
-   get armors() {
+  get armors() {
     return this._armors;
   }
 
@@ -384,7 +121,6 @@ export class BotitSettings {
     this._skills = this._loadSkills();
     this._talents = new TalentsConfig();
     this._proficiencies = this._loadProficiencies();
-    this._bodyLocations = this._loadBodyLocations();
     this._armorParts = this._loadArmorParts();
     this._armorMaterials = this._loadArmorMaterials();
     this._armors = this._loadArmors();
@@ -424,16 +160,6 @@ export class BotitSettings {
     }
 
     return proficiencies;
-  }
-
-  _loadBodyLocations() {
-    const bodyLocations = {};
-
-    for (const loc of bodyLocationsData) {
-      bodyLocations[loc.key] = loc;
-    }
-
-    return bodyLocations;
   }
 
   _loadArmorParts() {

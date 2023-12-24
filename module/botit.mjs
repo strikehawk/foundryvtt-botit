@@ -1,6 +1,8 @@
 // Import document classes.
 import { BotitActor } from "./documents/actor.mjs";
 import { BotitItem } from "./documents/item.mjs";
+import { BotitCombat } from "./combat/combat.mjs";
+import { BotitCombatTracker } from "./combat/combat-tracker.mjs";
 
 // Import sheet classes.
 import { BotitActorSheet } from "./sheets/actor-sheet.mjs";
@@ -12,6 +14,7 @@ import { HandlebarsHelpers } from "./helpers/handlebars-helpers.mjs";
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
 
 import { BOTIT } from "./helpers/config.mjs";
+import { createSystemData } from "./data-creation/system-data-creator.mjs";
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -41,6 +44,8 @@ Hooks.once('init', async function () {
   // Define custom Document classes
   CONFIG.Actor.documentClass = BotitActor;
   CONFIG.Item.documentClass = BotitItem;
+  CONFIG.Combat.documentClass = BotitCombat;
+  CONFIG.ui.combat = BotitCombatTracker;
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
@@ -53,101 +58,11 @@ Hooks.once('init', async function () {
   HandlebarsHelpers.registerHelpers();
 
   // Preload Handlebars templates.
-  return preloadHandlebarsTemplates();
+  await preloadHandlebarsTemplates();
+
+  console.log("Botit | System Blade of the Iron Throne initialized.");
 });
 
 Hooks.once('ready', async function () {
-  // _createSkills();
-  // _createProficiencies();
-  _createArmors();
+  await createSystemData(BOTIT);
 });
-
-async function _createSkills() {
-  let folder = game.folders.find(f => f.type === "Item" && f.name === "Skills");
-  if (!folder) {
-    folder = await Folder.create({ name: "Skills", type: "Item" });
-  }
-
-  for (const i of game.items) {
-    if (i.type !== "skill") {
-      continue;
-    }
-
-    i.delete();
-  }
-
-  let item;
-  let data;
-  for (const skill of Object.values(BOTIT.skills)) {
-    data = { 
-      name: skill.label, 
-      type: "skill", 
-      img: "icons/svg/d20.svg",
-      folder: folder.id, 
-      data: foundry.utils.deepClone(skill) 
-    };
-  
-    item = await Item.create(data);
-  }
-}
-
-async function _createProficiencies() {
-  let folder = game.folders.find(f => f.type === "Item" && f.name === "Proficiencies");
-  if (!folder) {
-    folder = await Folder.create({ name: "Proficiencies", type: "Item" });
-  }
-
-  for (const i of game.items) {
-    if (i.type !== "proficiency") {
-      continue;
-    }
-
-    i.delete();
-  }
-
-  let item;
-  let data;
-  for (const prof of Object.values(BOTIT.proficiencies)) {
-    data = { 
-      name: prof.label, 
-      type: "proficiency", 
-      img: "icons/svg/combat.svg",
-      folder: folder.id, 
-      data: foundry.utils.deepClone(prof) 
-    };
-
-    data.data.ranged = !!data.data.ranged;
-  
-    item = await Item.create(data);
-  }
-}
-
-async function _createArmors() {
-  let folder = game.folders.find(f => f.type === "Item" && f.name === "Armors");
-  if (!folder) {
-    folder = await Folder.create({ name: "Armors", type: "Item" });
-  }
-
-  for (const i of game.items) {
-    if (i.type !== "armor") {
-      continue;
-    }
-
-    i.delete();
-  }
-
-  let item;
-  let data;
-  for (const armor of Object.values(BOTIT.armors)) {
-    data = { 
-      name: armor.label, 
-      type: "armor",
-      folder: folder.id, 
-      data: foundry.utils.deepClone(armor) 
-    };
-
-    data.data.equipped = false;
-  
-    item = await Item.create(data);
-  }
-}

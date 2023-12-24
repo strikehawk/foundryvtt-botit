@@ -22,6 +22,6 @@
     "sass": "1.45.1"
   },
   "devDependencies": {
-    "@league-of-foundry-developers/foundry-vtt-types": "9.255.3"
+    "@league-of-foundry-developers/foundry-vtt-types": "9.280.0"
   }
 }

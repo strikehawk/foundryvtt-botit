@@ -2,11 +2,13 @@ import { BOTIT } from "../helpers/config.mjs";
 
 export class ActorProficienciesManager {
   static getCollection(context) {
-    ActorProficienciesManager.setDefaultedProficiencies(context.data);
+    const actor = context.document;
+
+    // ActorProficienciesManager.setDefaultedProficiencies(context.data);
 
     const collection = foundry.utils.deepClone(BOTIT.proficiencies);
-    const currentValues = context.data.proficiencies;
-    const defaultedValues = context.data.defaultedProficiencies;
+    const currentValues = actor.system.proficiencies;
+    const defaultedValues = actor.system.defaultedProficiencies;
 
     for (const [k, v] of Object.entries(collection)) {
       v.value = Math.max(currentValues[k] || 0, defaultedValues[k] || 0);

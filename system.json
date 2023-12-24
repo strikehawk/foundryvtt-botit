@@ -1,40 +1,38 @@
 {
-    "name": "blade-iron-throne",
-    "title": "Blade of the Iron Throne",
-    "description": "Blade of the Iron Throne game system for Foundry VTT",
-    "version": "1.0.1",
-    "authors": [
-      {
-        "name": "Strikehawk",
-        "url": "https://foundryvtt.com"
-      }
-    ],
-    "compatibility": {
-      "minimum": "8.9",
-      "verified": "10.288",
-      "maximum": "10"
-    },
-    "esmodules": [
-      "module/botit.mjs"
-    ],
-    "styles": [
-      "css/botit.css"
-    ],
-    "packs": [],
-    "languages": [
-      {
-        "lang": "en",
-        "name": "English",
-        "path": "lang/en.json"
-      }
-    ],
-    "socket": false,
-    "initiative": "1d20",
-    "gridDistance": 10,
-    "gridUnits": "ft",
-    "primaryTokenAttribute": "resources.hp",
-    "secondaryTokenAttribute": "resources.wounds",
-    "url": "https://github.com/strikehawk/foundryvtt-botit",
-    "manifest": "https://raw.githubusercontent.com/strikehawk/foundryvtt-botit/develop/system.json",
-    "download": "https://your/packaged/download/blade-iron-throne.zip"
-  }
+  "title": "Blade of the Iron Throne",
+  "description": "Blade of the Iron Throne game system for Foundry VTT",
+  "version": "1.0.1",
+  "compatibility": {
+    "minimum": "10",
+    "verified": "11",
+    "maximum": "11"
+  },
+  "authors": [
+    {
+      "name": "Strikehawk",
+      "url": "https://github.com/strikehawk"
+    }
+  ],
+  "esmodules": [
+    "module/botit.mjs"
+  ],
+  "styles": [
+    "css/botit.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "gridDistance": 10,
+  "gridUnits": "ft",
+  "primaryTokenAttribute": "resources.hp",
+  "secondaryTokenAttribute": "resources.wounds",
+  "background": "systems/blade-iron-throne/assets/img/splash.webp",
+  "url": "https://github.com/strikehawk/foundryvtt-botit",
+  "manifest": "https://raw.githubusercontent.com/strikehawk/foundryvtt-botit/develop/system.json",
+  "download": "https://your/packaged/download/blade-iron-throne.zip",
+  "id": "blade-iron-throne"
+}
